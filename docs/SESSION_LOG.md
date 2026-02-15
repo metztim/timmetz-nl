@@ -2,6 +2,106 @@
 
 ---
 
+## Session Log: 2026-02-15 (Phase 2 Research)
+
+**Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
+**Type**: [research]
+
+### Objectives
+- Research Tim's actual projects, career history, and writing for Phase 2 seed content
+- Explore all codebases under /Users/timmetz/Developer/Projects
+- Deep web research on Tim Metz (press, interviews, career, projects)
+- Mine Logseq for bio material and project context
+- Produce triage-ready project inventory and verified career timeline
+
+### Summary
+Comprehensive Phase 2 research session using 5+ parallel subagents. Explored all project codebases across 4 clusters (SaentLifeline/system, Personal, Animalz, docs). Ran deep web research finding press coverage in Newsweek, Quartz, New Atlas, Entrepreneur.com, and others. Mined Logseq and found Tim's 9-part "My Personal Productivity Journey and the History of Saent" article series. Tim provided LinkedIn PDF which filled major gaps — revealed Sherpa Media, Yourzine China, Happylatte (High Noon, 12M+ downloads), full DanceTrippin history, and education. Corrected several errors: "Saent" not "SAENT", KOS = KaiOS, DanceTelevision = DanceTrippin, United NL = Lectric, Yourzine was subsidiary of Lectric, "As The World Spunks" was Dutch vlog (not Africa documentary), Africa project = Inside Africa (insideafrica.tv).
+
+### Files Changed
+- `docs/planning/RESEARCH.md` — Comprehensive research findings (career timeline, project inventory, press, sources)
+- `docs/SESSION_LOG.md` — This session log
+
+### Key Decisions
+- Project triage deferred to next session — full inventory prepared with HIGH/MEDIUM/SKIP recommendations
+- Research saved to `docs/planning/RESEARCH.md` (gitignored, local reference for content writing)
+- Career timeline fully verified against LinkedIn — 14 roles spanning 1998–present
+
+### Research Findings Summary
+
+**Career:** 14 roles across 10 companies, spanning web development (1998) through AI/marketing leadership (current). Key entries: Lectric (web dev), DanceTrippin (music TV), Sherpa Media (co-founded), Yourzine China (digital agency, Beijing), Happylatte (mobile gaming, Beijing), Saent (productivity hardware, co-founded), KaiOS (mobile OS, 140M+ devices, TIME Best Inventions 2019), Animalz (content marketing → AI infrastructure).
+
+**Projects found:** 30+ projects scanned across all directories. 10 rated HIGH relevance for the site (Lifeline, We Eat Robots, Saent, Animalz Intelligence OS, Claude Code Plugins, ClaudeQuote, Claude Carbon, My-OS, Creativity Guard, md-clip). 5 rated MEDIUM. Rest skipped.
+
+**Press:** 12+ publications covered Saent (Newsweek, Quartz, New Atlas, etc.). Tim has published on Entrepreneur.com, InVision, Zapier, Animalz blog, KaiOS blog, Medium (13+ Saent articles), saent.com. Hosts 2 podcasts. Book in development ("Eating Robots For Breakfast").
+
+**Locations lived:** Netherlands → Amsterdam → Barcelona → Ibiza → Nairobi → Beijing → Sofia → Hong Kong → Koh Samui (Thailand).
+
+### Technical Notes
+- Subagents cannot access MCP tools (Logseq) — must run from main context
+- First codebase scan agent hit permissions; resolved by listing directories in main context first
+- LinkedIn PDF provided the single most valuable source — filled all career gaps
+
+### Future Plans & Unimplemented Phases
+
+#### Phase 2: Seed content (continued)
+**Status**: Research complete — content writing next
+**Remaining Steps**:
+1. Tim triages project inventory (which projects make the cut?)
+2. Write real project .md files with descriptions from research
+3. Draft homepage intro and about page copy
+4. Create work history entries (3-5 curated from full timeline)
+5. Update homepage with real content (replace placeholders)
+
+#### Phases 3-5: See docs/planning/PLAN.md for full details
+
+### Next Actions
+- [ ] Tim triages project list (HIGH candidates table in RESEARCH.md)
+- [ ] Decide: Saent as own project or folded into Lifeline?
+- [ ] Decide: which work history entries to feature?
+- [ ] Write real content files based on triage decisions
+- [ ] Replace placeholder homepage/about content
+
+### Metrics
+- Files created: 1 (RESEARCH.md)
+- Files modified: 1 (SESSION_LOG.md)
+- Subagents spawned: 7 (3 codebase explorers, 1 web researcher, 1 Logseq miner, 1 follow-up researcher, 1 failed codebase scan)
+- Projects cataloged: 30+
+- Press sources found: 15+
+- Career roles verified: 14
+
+### Learnings & Improvement Opportunities
+
+**Workflow improvements:**
+- LinkedIn PDF was the most efficient single source — ask for it earlier in future bio research
+- Subagents can't use MCP tools — run Logseq/other MCP searches in main context
+- Subagent codebase exploration needs directory listing from main context first (permissions)
+
+### Continuation Prompt
+> Project: timmetz-nl
+> Session log: docs/SESSION_LOG.md
+> Section: "## Session Log: 2026-02-15 (Phase 2 Research)" ([research] entry)
+>
+> Context: Phase 2 research is complete. All findings saved to `docs/planning/RESEARCH.md`. Next step is project triage (Tim decides which projects to include) then writing real content files.
+>
+> Key points:
+> - Full research at `docs/planning/RESEARCH.md` — career timeline, project inventory, press, sources
+> - Project triage pending — 10 HIGH candidates, 5 MEDIUM, rest SKIP
+> - "Saent" not "SAENT", Inside Africa (not As The World Spunks) was the Africa project
+> - DanceTrippin (not DanceTelevision), Lectric (not United NL), Yourzine was subsidiary of Lectric
+> - Site builds: `npm run dev` at localhost:4321
+> - Homepage and content files still have placeholders — need real content
+>
+> Referenced paths:
+> - `docs/planning/RESEARCH.md` — Full Phase 2 research findings
+> - `docs/planning/PLAN.md` — Implementation plan
+> - `CLAUDE.md` — Project conventions
+> - `src/content/` — Content collections (still placeholder .md files)
+> - `src/pages/index.astro` — Homepage (placeholder content to replace)
+>
+> Read the session log section above and the research file, familiarize yourself with the context, and let me know when ready to continue.
+
+---
+
 ## Session Log: 2026-02-14
 
 **Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
@@ -125,6 +225,117 @@ Full planning session for Tim's personal website. Read 3 voice memo briefings, e
 > - `docs/planning/PLAN.md` — Full implementation plan
 > - `docs/planning/DESIGN_RESEARCH.md` — Design feedback and principles
 > - `materials/briefing/` — Original voice memo briefings
+>
+> Read the session log section above, familiarize yourself with the context, and let me know when ready to continue.
+
+---
+
+## Session Log: 2026-02-15 (Phase 1)
+
+**Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
+**Type**: [feature]
+
+### Objectives
+- Build Phase 1: Astro project setup, content schemas, design system, page templates
+- Translate approved prototype into production Astro components
+- Set up git repo and push to GitHub
+
+### Summary
+Built the full Astro 5 + Tailwind 4 site foundation, translating the approved Phase 0 prototype into production components. Self-hosted Inter (variable) and JetBrains Mono fonts. Created 4 content collection schemas (projects, writing, work, media), all layout components (Base, Sidebar, MobileNav, MobileFooter, ThemeToggle, SEOHead, Post), and page templates for homepage, projects (index + detail), writing (index + detail), and about. Added remark-gfm for footnote support on all Markdown content. Tim reviewed in browser and approved. Pushed to GitHub as public repo (after gitignoring private materials).
+
+### Files Changed
+- `package.json`, `tsconfig.json`, `astro.config.mjs` — Project config
+- `src/content.config.ts` — 4 content collection schemas with Zod
+- `src/styles/global.css` — Full design system: theme, typography, prose, footnotes
+- `src/layouts/Base.astro` — HTML shell with sidebar + mobile nav
+- `src/layouts/Post.astro` — Writing post layout with prose styling
+- `src/components/Sidebar.astro` — Desktop left sidebar
+- `src/components/MobileNav.astro` — Mobile top nav
+- `src/components/MobileFooter.astro` — Mobile footer
+- `src/components/ThemeToggle.astro` — Dark/light toggle
+- `src/components/SEOHead.astro` — Meta tags, OG
+- `src/pages/index.astro` — Homepage hub
+- `src/pages/about.astro` — Bio + work history
+- `src/pages/projects/index.astro` — Project listing (grouped by status)
+- `src/pages/projects/[...slug].astro` — Project detail
+- `src/pages/writing/index.astro` — Writing listing (year-grouped)
+- `src/pages/writing/[...slug].astro` — Writing detail
+- `src/content/projects/*.md` — 3 placeholder project files
+- `src/content/writing/*.md` — 3 placeholder writing files
+- `src/content/work/animalz-ai.md` — 1 placeholder work file
+- `public/fonts/` — InterVariable.woff2, JetBrainsMono-Regular.woff2, JetBrainsMono-Medium.woff2
+- `public/favicon.svg` — Terracotta "T" favicon
+- `CLAUDE.md` — Project-level instructions
+- `.gitignore` — Includes materials/ and docs/planning/
+
+### Key Decisions
+- Footnotes supported on all Markdown content via remark-gfm (Tim's request)
+- Writing entry title weight bumped to 450 (refinement #1 from Phase 0)
+- `materials/` and `docs/planning/` gitignored before making repo public
+- GitHub repo: https://github.com/metztim/timmetz-nl (public)
+- Cloudflare Pages deferred — not needed until ready to go live
+
+### Technical Notes
+- Astro 5.17.2, Tailwind 4.1, remark-gfm 4
+- Inter variable font (single woff2, 100-900 weight range)
+- Build produces 10 pages in ~600ms
+- Dark mode: class strategy with localStorage + system preference + FOUC prevention
+
+### Commits
+- `509b51f` — Phase 1: Astro site foundation with design system and page templates
+- `3689c94` — Remove private materials and planning docs from repo
+
+### Future Plans & Unimplemented Phases
+
+#### Phase 2: Seed content
+**Status**: Not started — next session
+**Planned Steps** (from PLAN.md):
+1. Research actual project codebases for descriptions (Lifeline, Animalz AI, My-OS, ClaudeQuote, Claude Carbon, others)
+2. Draft homepage + about copy from research
+3. Create 3-5 work history entries
+4. Potential MVP launch point after this phase
+
+#### Phases 3-5: See docs/planning/PLAN.md for full details
+
+### Next Actions
+- [ ] Phase 2: Research project codebases and write real descriptions
+- [ ] Phase 2: Draft real homepage intro and about page copy
+- [ ] Phase 2: Populate work history entries
+- [ ] Revisit "→ all projects" link visibility with real content (refinement #2)
+- [ ] Cloudflare Pages setup when ready to go live
+
+### Metrics
+- Files created: 25
+- Files modified: 1 (.gitignore)
+- Build: 10 pages, ~600ms
+
+### Learnings & Improvement Opportunities
+
+**Workflow improvements:**
+- Background subagents for font downloads got blocked on permissions — faster to just do it inline
+- Manual Astro scaffolding was cleaner than `create-astro` for a non-empty directory
+
+### Continuation Prompt
+> Project: timmetz-nl
+> Session log: docs/SESSION_LOG.md
+> Section: "## Session Log: 2026-02-15 (Phase 1)" ([feature] entry)
+>
+> Context: Phase 1 (Astro foundation) is complete. Starting Phase 2 — researching Tim's actual projects, writing real content, populating the site with seed content.
+>
+> Key points:
+> - Site builds and runs: `npm run dev` at localhost:4321
+> - CLAUDE.md has full project structure and conventions
+> - Full implementation plan at `docs/planning/PLAN.md` (Phase 2 steps in section 5)
+> - Homepage currently has placeholder content — needs real project descriptions, intro copy, work history
+> - Project codebases to research: SaentLifeline, my-os, animalz-intelligence-os, Personal/ projects
+> - "Writing" everywhere (not "Blog"), date format MM.DD, no stars
+> - GitHub: https://github.com/metztim/timmetz-nl
+>
+> Referenced paths:
+> - `docs/planning/PLAN.md` — Full plan with Phase 2 steps
+> - `CLAUDE.md` — Project conventions and structure
+> - `src/content/` — Content collections (currently placeholder .md files)
+> - `src/pages/index.astro` — Homepage (placeholder content to replace)
 >
 > Read the session log section above, familiarize yourself with the context, and let me know when ready to continue.
 
