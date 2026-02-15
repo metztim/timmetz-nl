@@ -1,0 +1,89 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
+
+const statusOrder = ["active", "on-ice", "archived", "completed"] as const;
+const statusLabels: Record<string, string> = {
+  active: "Active",
+  "on-ice": "On Ice",
+  archived: "Archived",
+  completed: "Completed",
+};
+
+const grouped = statusOrder
+  .map(status => ({
+    status,
+    label: statusLabels[status],
+    projects: allProjects
+      .filter(p => p.data.status === status)
+      .sort((a, b) => a.data.sortOrder - b.data.sortOrder),
+  }))
+  .filter(g => g.projects.length > 0);
+---
+
+<Base title="Projects" description="Software projects, tools, and experiments by Tim Metz.">
+  <h1 class="page-title">Projects</h1>
+
+  {grouped.map(group => (
+    <section class="status-group">
+      <h2 class="status-heading">{group.label}</h2>
+      <ul class="project-list">
+        {group.projects.map(project => (
+          <li>
+            <a href={`/projects/${project.id}`} class="project-name">{project.data.title}</a>
+            <span class="project-desc"> &mdash; {project.data.description}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .page-title {
+    font-size: 30px;
+    margin-bottom: 2rem;
+  }
+
+  .status-group {
+    margin-bottom: 2rem;
+  }
+
+  .status-heading {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 0;
+  }
+
+  .project-list li {
+    line-height: 1.5;
+  }
+
+  .project-name {
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .project-name:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .project-desc {
+    color: var(--color-text-muted);
+    font-size: 15px;
+  }
+</style>

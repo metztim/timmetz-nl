@@ -1,0 +1,96 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const allWork = await getCollection("work");
+const sortedWork = allWork.sort(
+  (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime()
+);
+
+function formatYear(date: Date): string {
+  return date.getFullYear().toString();
+}
+---
+
+<Base title="About" description="Bio, work history, and background of Tim Metz.">
+  <h1 class="page-title">About</h1>
+
+  <div class="prose bio">
+    <p>
+      I build things at the intersection of productivity, AI, and software. I'm currently
+      leading AI infrastructure at Animalz, where I build internal tools that power
+      AI-assisted content operations.
+    </p>
+    <p>
+      Before that, I founded SAENT, a productivity company that built hardware and software
+      tools for focused work. I've been building products and companies for over 15 years,
+      across the Netherlands, Hong Kong, China, and remotely.
+    </p>
+  </div>
+
+  <section class="section">
+    <h2>Work</h2>
+    <ul class="work-list">
+      {sortedWork.map(entry => (
+        <li>
+          <span class="work-company">{entry.data.company}</span>
+          <span> &mdash; {entry.data.title} </span>
+          <span class="work-dates">
+            ({formatYear(entry.data.startDate)}&ndash;{entry.data.endDate ? formatYear(entry.data.endDate) : "present"})
+          </span>
+          {entry.data.location && (
+            <span class="work-location"> &middot; {entry.data.location}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .page-title {
+    font-size: 30px;
+    margin-bottom: 2rem;
+  }
+
+  .bio {
+    margin-bottom: 3rem;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+  }
+
+  .section h2 {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .work-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .work-list li {
+    line-height: 1.5;
+  }
+
+  .work-company {
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .work-dates {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+
+  .work-location {
+    font-size: 14px;
+    color: var(--color-text-muted);
+  }
+</style>

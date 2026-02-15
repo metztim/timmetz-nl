@@ -1,0 +1,199 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ============================================
+   Font faces (self-hosted)
+   ============================================ */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+}
+
+/* ============================================
+   Tailwind theme
+   ============================================ */
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f7f7f7;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #888888;
+  --color-border: #e5e5e5;
+  --color-accent: #c05030;
+  --color-accent-hover: #a0402a;
+}
+
+/* ============================================
+   Dark mode overrides
+   ============================================ */
+
+html.dark {
+  --color-bg: #111111;
+  --color-bg-subtle: #1a1a1a;
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #c0c0c0;
+  --color-text-muted: #777777;
+  --color-border: #2a2a2a;
+  --color-accent: #e07050;
+  --color-accent-hover: #f09070;
+}
+
+/* ============================================
+   Base styles
+   ============================================ */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+/* ============================================
+   Links
+   ============================================ */
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ============================================
+   Prose overrides (for Markdown content)
+   ============================================ */
+
+.prose {
+  --tw-prose-body: var(--color-text-secondary);
+  --tw-prose-headings: var(--color-text-primary);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-text-primary);
+  --tw-prose-code: var(--color-text-primary);
+  --tw-prose-pre-bg: var(--color-bg-subtle);
+  --tw-prose-pre-code: var(--color-text-secondary);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-text-secondary);
+  --tw-prose-quote-borders: var(--color-border);
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+  --tw-prose-counters: var(--color-text-muted);
+  --tw-prose-bullets: var(--color-text-muted);
+  --tw-prose-captions: var(--color-text-muted);
+}
+
+.prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--color-accent-hover);
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+.prose pre {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.prose pre code {
+  font-size: 0.8125em;
+}
+
+/* ============================================
+   Footnotes (remark-gfm)
+   ============================================ */
+
+.prose .footnotes {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.prose .footnotes ol {
+  padding-left: 1.25rem;
+}
+
+.prose .footnotes li {
+  margin-bottom: 0.5rem;
+}
+
+.prose .footnotes li p {
+  margin: 0;
+}
+
+.prose sup a[data-footnote-ref] {
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  text-decoration: none;
+  color: var(--color-accent);
+  margin-left: 1px;
+}
+
+.prose a[data-footnote-backref] {
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+}

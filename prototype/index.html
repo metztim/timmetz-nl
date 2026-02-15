@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim Metz</title>
+    <script>
+        (function() {
+            var saved = localStorage.getItem('theme');
+            if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           Custom Properties
+           ============================================ */
+        :root {
+            --bg: #ffffff;
+            --bg-subtle: #f7f7f7;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #888888;
+            --border: #e5e5e5;
+            --accent: #c05030;
+            --accent-hover: #a0402a;
+        }
+
+        html.dark {
+            --bg: #111111;
+            --bg-subtle: #1a1a1a;
+            --text-primary: #f0f0f0;
+            --text-secondary: #c0c0c0;
+            --text-muted: #777777;
+            --border: #2a2a2a;
+            --accent: #e07050;
+            --accent-hover: #f09070;
+        }
+
+        /* ============================================
+           Reset
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul { list-style: none; }
+
+        /* ============================================
+           Base
+           ============================================ */
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            background-color: var(--bg);
+            transition: background-color 200ms ease, color 200ms ease;
+        }
+
+        /* ============================================
+           Typography
+           ============================================ */
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           Links (default: inline content links)
+           ============================================ */
+        a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            transition: color 150ms ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        /* ============================================
+           Layout
+           ============================================ */
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ============================================
+           Sidebar
+           ============================================ */
+        .sidebar {
+            width: 200px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            padding: 2.5rem 1.5rem 2rem;
+        }
+
+        .sidebar-inner {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sidebar-top {
+            flex: 1;
+        }
+
+        .sidebar .site-name {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .sidebar .site-name:hover {
+            color: var(--accent);
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .sidebar-nav a {
+            font-size: 15px;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            color: var(--text-primary);
+        }
+
+        .sidebar-bottom {
+            padding-top: 1rem;
+        }
+
+        .sidebar-separator {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 1rem;
+            transition: background-color 200ms ease;
+        }
+
+        .sidebar-social {
+            display: flex;
+            flex-direction: column;
+            gap: 0.375rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-social a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .sidebar-social a:hover {
+            color: var(--accent);
+        }
+
+        /* ============================================
+           Theme Toggle
+           ============================================ */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+            padding: 4px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 150ms ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--text-primary);
+        }
+
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: block; }
+        html.dark .theme-toggle .icon-sun { display: block; }
+        html.dark .theme-toggle .icon-moon { display: none; }
+
+        /* ============================================
+           Main Content
+           ============================================ */
+        .main {
+            flex: 1;
+            max-width: 640px;
+            padding: 2.5rem 2rem 4rem;
+        }
+
+        /* ============================================
+           Intro
+           ============================================ */
+        .intro {
+            margin-bottom: 3rem;
+        }
+
+        /* ============================================
+           Sections
+           ============================================ */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+           "More" Links (→ all projects, etc.)
+           ============================================ */
+        .more-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .more-link:hover {
+            color: var(--accent);
+        }
+
+        /* ============================================
+           Project List
+           ============================================ */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.375rem;
+        }
+
+        .project-list li {
+            line-height: 1.5;
+        }
+
+        .project-name {
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .project-name:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* ============================================
+           Writing List (year-grouped, tonsky-style)
+           ============================================ */
+        .writing-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .writing-group:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .year-heading {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 0.375rem;
+        }
+
+        .writing-entries {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .writing-entry {
+            display: flex;
+            align-items: baseline;
+            text-decoration: none;
+            padding: 3px 0;
+        }
+
+        .writing-entry .entry-title {
+            flex: 1;
+            color: var(--text-secondary);
+            transition: color 150ms ease;
+        }
+
+        .writing-entry:hover .entry-title {
+            color: var(--accent);
+        }
+
+        .writing-entry .entry-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-left: 1.5rem;
+            flex-shrink: 0;
+            min-width: 3rem;
+            text-align: right;
+        }
+
+        /* ============================================
+           Work List
+           ============================================ */
+        .work-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.375rem;
+        }
+
+        .work-list li {
+            line-height: 1.5;
+        }
+
+        .work-company {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .work-dates {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ============================================
+           Mobile Header
+           ============================================ */
+        .mobile-header {
+            display: none;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            transition: border-color 200ms ease;
+        }
+
+        .mobile-header .site-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-right: auto;
+            letter-spacing: -0.01em;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .mobile-nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .mobile-header .theme-toggle {
+            margin-left: 0.75rem;
+        }
+
+        /* ============================================
+           Mobile Footer
+           ============================================ */
+        .mobile-footer {
+            display: none;
+            padding: 2rem 1.25rem;
+            border-top: 1px solid var(--border);
+            transition: border-color 200ms ease;
+        }
+
+        .mobile-footer-links {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .mobile-footer-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .mobile-footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* ============================================
+           Responsive
+           ============================================ */
+        @media (max-width: 767px) {
+            .mobile-header {
+                display: flex;
+            }
+
+            .mobile-footer {
+                display: flex;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .layout {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .main {
+                max-width: 100%;
+                padding: 1.5rem 1.25rem 2rem;
+            }
+
+            .writing-entry .entry-date {
+                margin-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         Mobile Header (visible < 768px)
+         ============================================ -->
+    <header class="mobile-header">
+        <a href="#" class="site-name">Tim Metz</a>
+        <nav class="mobile-nav-links">
+            <a href="#">Projects</a>
+            <a href="#">Writing</a>
+            <a href="#">About</a>
+        </nav>
+        <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+    </header>
+
+    <div class="layout">
+        <!-- ============================================
+             Sidebar (visible >= 768px)
+             ============================================ -->
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-top">
+                    <a href="#" class="site-name">Tim Metz</a>
+                    <nav class="sidebar-nav">
+                        <a href="#">Projects</a>
+                        <a href="#">Writing</a>
+                        <a href="#">About</a>
+                    </nav>
+                </div>
+                <div class="sidebar-bottom">
+                    <div class="sidebar-separator"></div>
+                    <div class="sidebar-social">
+                        <a href="#">GitHub</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">RSS</a>
+                    </div>
+                    <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+                        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ============================================
+             Main Content
+             ============================================ -->
+        <main class="main">
+            <!-- Intro -->
+            <p class="intro">I build things at the intersection of productivity, AI, and software. Currently leading AI infrastructure at <a href="#">Animalz</a> and building <a href="#">Lifeline</a>, a macOS focus timer.</p>
+
+            <!-- Projects -->
+            <section class="section">
+                <h2>Projects</h2>
+                <ul class="project-list">
+                    <li>
+                        <a href="#" class="project-name">Lifeline</a>
+                        <span class="project-desc"> &mdash; macOS focus timer (4.8&#9733; on App Store)</span>
+                    </li>
+                    <li>
+                        <a href="#" class="project-name">We Eat Robots</a>
+                        <span class="project-desc"> &mdash; AI newsletter on Substack</span>
+                    </li>
+                    <li>
+                        <a href="#" class="project-name">Claude Carbon</a>
+                        <span class="project-desc"> &mdash; VS Code theme</span>
+                    </li>
+                    <li>
+                        <a href="#" class="project-name">ClaudeQuote</a>
+                        <span class="project-desc"> &mdash; Quote collection app</span>
+                    </li>
+                    <li>
+                        <a href="#" class="project-name">My-OS</a>
+                        <span class="project-desc"> &mdash; Personal automation system</span>
+                    </li>
+                    <li>
+                        <a href="#" class="project-name">Animalz Intelligence OS</a>
+                        <span class="project-desc"> &mdash; AI content operations platform</span>
+                    </li>
+                </ul>
+                <a href="#" class="more-link">&rarr; all projects</a>
+            </section>
+
+            <!-- Writing -->
+            <section class="section">
+                <h2>Writing</h2>
+                <div class="writing-group">
+                    <h3 class="year-heading">2026</h3>
+                    <div class="writing-entries">
+                        <a href="#" class="writing-entry">
+                            <span class="entry-title">Building in Public with AI</span>
+                            <span class="entry-date">02.10</span>
+                        </a>
+                        <a href="#" class="writing-entry">
+                            <span class="entry-title">The Case for Focused Work in 2026</span>
+                            <span class="entry-date">01.15</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="writing-group">
+                    <h3 class="year-heading">2025</h3>
+                    <div class="writing-entries">
+                        <a href="#" class="writing-entry">
+                            <span class="entry-title">How We Built an AI Content Engine</span>
+                            <span class="entry-date">11.22</span>
+                        </a>
+                        <a href="#" class="writing-entry">
+                            <span class="entry-title">Why I Switched to Claude for Everything</span>
+                            <span class="entry-date">09.08</span>
+                        </a>
+                        <a href="#" class="writing-entry">
+                            <span class="entry-title">Lessons from 7 Years of Bootstrapping</span>
+                            <span class="entry-date">06.14</span>
+                        </a>
+                        <a href="#" class="writing-entry">
+                            <span class="entry-title">The Pomodoro Technique is Dead</span>
+                            <span class="entry-date">03.02</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="more-link">&rarr; all writing</a>
+            </section>
+
+            <!-- Work -->
+            <section class="section">
+                <h2>Work</h2>
+                <ul class="work-list">
+                    <li>
+                        <span class="work-company">Animalz</span>
+                        <span> &mdash; AI Infrastructure Lead </span>
+                        <span class="work-dates">(2023&ndash;present)</span>
+                    </li>
+                    <li>
+                        <span class="work-company">Animalz</span>
+                        <span> &mdash; Content Marketing </span>
+                        <span class="work-dates">(2019&ndash;2023)</span>
+                    </li>
+                    <li>
+                        <span class="work-company">SAENT</span>
+                        <span> &mdash; Founder &amp; CEO </span>
+                        <span class="work-dates">(2015&ndash;2022)</span>
+                    </li>
+                    <li>
+                        <span class="work-company">KOS</span>
+                        <span> &mdash; Co-founder </span>
+                        <span class="work-dates">(2011&ndash;2015)</span>
+                    </li>
+                </ul>
+                <a href="#" class="more-link">&rarr; full history</a>
+            </section>
+        </main>
+    </div>
+
+    <!-- ============================================
+         Mobile Footer (visible < 768px)
+         ============================================ -->
+    <footer class="mobile-footer">
+        <div class="mobile-footer-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">RSS</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            var isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+    </script>
+</body>
+</html>
