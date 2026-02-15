@@ -21,10 +21,22 @@ Comprehensive Phase 2 research session using 5+ parallel subagents. Explored all
 - `docs/planning/RESEARCH.md` — Comprehensive research findings (career timeline, project inventory, press, sources)
 - `docs/SESSION_LOG.md` — This session log
 
+### Referenced Materials
+- `/Users/timmetz/Downloads/Tim LinkedIn Profile.pdf` — LinkedIn profile PDF (primary career source)
+- `/Users/timmetz/Developer/Projects/` — All project codebases explored (SaentLifeline, system/, Personal/, Animalz/)
+- Logseq page: "My personal productivity journey and the history of Saent" — 9-part article series with full Saent timeline
+- https://selzy.com/en/blog/tim-metz-interview/ — Selzy interview (career overview)
+- https://www.flow.club/host-interviews/tim-metz — Flow Club profile (locations, work style)
+- https://www.kaiostech.com/author/tim/ — KaiOS author page
+- https://www.animalz.co/blog/author/tim-metz — Animalz author page
+- https://medium.com/en-route-to-saenthood — "En Route to Saenthood" Medium publication
+
 ### Key Decisions
 - Project triage deferred to next session — full inventory prepared with HIGH/MEDIUM/SKIP recommendations
 - Research saved to `docs/planning/RESEARCH.md` (gitignored, local reference for content writing)
 - Career timeline fully verified against LinkedIn — 14 roles spanning 1998–present
+- Naming corrections confirmed: "Saent" (not "SAENT"), DanceTrippin (not DanceTelevision), Lectric (not United NL), Yourzine = subsidiary of Lectric
+- Africa project = Inside Africa (insideafrica.tv), NOT "As The World Spunks" (which was a Dutch youth vlog for Spunk magazine)
 
 ### Research Findings Summary
 
