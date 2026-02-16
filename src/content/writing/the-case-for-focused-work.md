@@ -2,7 +2,6 @@
 title: "The Case for Focused Work in 2026"
 description: "Why deep focus matters more than ever in an age of AI-assisted everything."
 pubDate: 2026-01-15
-category: productivity
 tags: ["productivity", "focus"]
 ---
 

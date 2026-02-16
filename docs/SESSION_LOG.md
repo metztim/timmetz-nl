@@ -2,6 +2,185 @@
 
 ---
 
+## Session Log: 2026-02-16 (Tag Filters, Workflows Stub, Schema Updates)
+
+**Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
+**Type**: [feature]
+
+### Objectives
+- Discuss and plan 4 new website ideas Tim brought: link-first content, tag filters, tech stack section, AI workflows page
+- Implement what's quick; park what needs more planning
+
+### Summary
+Tim presented 4 ideas for the website. After discussion, scoped down to implementing 3 structural changes now: (1) tag-based filter chips on the writing listing page, (2) a Workflows stub page with nav item, and (3) schema updates dropping the `category` enum in favor of tags. Content research/population (link-first strategy) and tech stack section are parked for later sessions. All changes build clean. Filter chips use vanilla JS with OR logic, dynamically generated from entry tags.
+
+### Key Decisions
+- **Filters**: Tag-based (hybrid) — entries get 1-3 tags, filter chips show all unique tags. OR logic when multiple active.
+- **External links**: When `originalUrl` is set, writing entries link directly to source (new tab, ↗ indicator). No detail page for external content.
+- **Workflows**: Stub page now, full implementation later. Added as 4th nav item (Projects, Writing, Workflows, About).
+- **Category → Tags**: Dropped the `category` enum entirely — tags are strictly more flexible and serve the same purpose.
+- **Content research**: Parked — needs precision, not a quick scrape. Will be a dedicated session.
+- **Tech stack section**: Parked for later (low priority, content-dependent).
+
+### Files Changed
+- `src/content.config.ts` — Removed `category` enum, added `sourceName` optional string field
+- `src/pages/writing/index.astro` — Added tag filter chips, external link prep, vanilla JS filtering
+- `src/pages/workflows/index.astro` — New stub page ("Coming soon")
+- `src/components/Sidebar.astro` — Added "Workflows" nav item
+- `src/components/MobileNav.astro` — Added "Workflows" nav item
+- `src/content/writing/building-in-public-with-ai.md` — Removed `category` field
+- `src/content/writing/the-case-for-focused-work.md` — Removed `category` field
+- `src/content/writing/how-we-built-an-ai-content-engine.md` — Removed `category` field
+- `docs/planning/PLAN.md` — Added Phase 2.5 (link-first content) and Phase 4.5 (tech stack + full workflows)
+
+### Referenced Materials
+- `docs/planning/PLAN.md` — Full implementation plan, updated with new phases
+- `docs/planning/DESIGN_RESEARCH.md` — Design decisions reference
+- `docs/planning/RESEARCH.md` — Phase 2 research with content inventory (gitignored, local only)
+
+### Plan File
+- **Path**: `~/.claude/plans/harmonic-mixing-popcorn.md`
+- **Status**: Completed
+- **Phases Completed**: All 5 steps (schema update, filter chips, workflows stub, content cleanup, planning doc updates)
+
+### Future Plans & Unimplemented Phases
+
+#### Phase 2.5: Link-first content population
+**Status**: Not started
+**Planned Steps**:
+1. Web search for all Tim Metz published content across: Saent blog/Medium (~13 articles), Animalz blog, Entrepreneur.com, InVision, Zapier, KaiOS blog, We Eat Robots (Substack), others
+2. Compile per article: title, URL, publication date, source name, tags
+3. Create one `.md` file per article with frontmatter only (title, pubDate, originalUrl, sourceName, tags)
+4. Replace the 3 existing placeholder writing files with real entries
+5. The writing listing page already handles external links (links out, new tab, ↗ indicator) — just needs content
+
+#### Phase 4.5: Additional sections
+**Status**: Not started
+
+**Tech stack / equipment:**
+- Add "Stack" or "Tools" section on About page, or dedicated `/uses` page
+- Simple list grouped by category (apps, hardware, services)
+- Tim needs to provide the content
+
+**AI workflows full implementation:**
+- Expand Workflows stub into real content section
+- Content collection for commands, workflows, agents
+- Auto-sync from `~/.claude/` directories or manual curation
+- Code blocks with copy-to-clipboard
+- Decide: keep as top-level nav or fold under Projects
+
+### Next Actions
+- [ ] Complete project triage (Tim marks HIGH/MEDIUM candidates in/out)
+- [ ] Dedicated session for content research and link-first population (Phase 2.5)
+- [ ] Populate remaining work history entries
+- [ ] Write real homepage intro and about page copy
+- [ ] Plan full Workflows implementation when ready
+
+### Metrics
+- Files modified: 8
+- Files created: 1 (`src/pages/workflows/index.astro`)
+- Build: 11 pages, ~2s, clean
+
+### Continuation Prompt
+> Project: timmetz-nl
+> Session log: docs/SESSION_LOG.md
+> Section: "## Session Log: 2026-02-16 (Tag Filters, Workflows Stub, Schema Updates)"
+>
+> Context: Added tag-based filter chips to writing page, stubbed a Workflows page with nav item, and updated the writing schema (dropped category enum, added sourceName). Content research/population is the next major step.
+>
+> Key points:
+> - Writing page now has dynamic tag filter chips (vanilla JS, OR logic, terracotta active state)
+> - External link behavior is prepped — entries with `originalUrl` will link out directly
+> - Workflows page at `/workflows` is a stub ("Coming soon") — full implementation needs its own planning session
+> - Project triage from previous session is still incomplete — Tim needs to mark candidates in/out
+> - Phase 2.5 (link-first content population) and Phase 4.5 (tech stack + full workflows) added to `docs/planning/PLAN.md`
+>
+> Referenced paths:
+> - `docs/planning/PLAN.md` — Updated implementation plan with new phases
+> - `docs/planning/RESEARCH.md` — Content inventory from Phase 2 research (local only, gitignored)
+> - `src/pages/writing/index.astro` — Writing listing with filter chips
+> - `src/pages/workflows/index.astro` — Workflows stub page
+>
+> Read the session log section above, familiarize yourself with the context, and let me know when ready to continue.
+
+---
+
+## Session Log: 2026-02-16 (Phase 2 Content Triage)
+
+**Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
+**Type**: [docs]
+
+### Objectives
+- Review Phase 2 research findings and begin project triage
+- Get Tim's decisions on project inclusion, work history curation, and content scope
+
+### Summary
+Short session resuming from Phase 2 research. Reviewed research findings and began project triage. Tim provided key decisions: Saent gets its own project entry (not folded into Lifeline), work history will be curated (not full LinkedIn dump), Inside Africa is important for about page, Happylatte goes in work history but framed honestly (joined after High Noon peak). YouTube videos exist for Inside Africa, DanceTrippin, Saent, and KaiOS. Presented the 10 HIGH and 5 MEDIUM project candidates for triage — session ended before Tim could mark individual projects in/out.
+
+### Referenced Materials
+- `docs/planning/RESEARCH.md` — Full Phase 2 research findings (read at session start)
+- `docs/SESSION_LOG.md` — Previous session logs (read for context)
+
+### Key Decisions
+- **Saent** = own project entry, not folded into Lifeline (it was a whole startup adventure)
+- **Work history** = curated highlights, not full LinkedIn timeline
+- **Inside Africa** = include in about page (very important life project)
+- **YouTube videos** exist for: Inside Africa, DanceTrippin, Saent, KaiOS — can link/embed
+- **Happylatte** = include in work history, but don't overclaim High Noon success (Tim joined after peak)
+
+### Future Plans & Unimplemented Phases
+
+#### Phase 2: Seed content (in progress)
+**Status**: Triage started, not complete
+**Remaining Steps**:
+1. **Finish project triage** — Tim needs to mark each of the 15 candidates (10 HIGH, 5 MEDIUM) as in/out
+2. Write real project `.md` files based on triage decisions
+3. Draft homepage intro copy
+4. Draft about page copy (incorporate Inside Africa, YouTube videos, locations lived)
+5. Create curated work history entries (Lectric, DanceTrippin, Inside Africa, Sherpa Media, Yourzine China, Happylatte, Saent, KaiOS, Animalz — Tim to pick which)
+6. Replace all placeholder content on homepage and pages
+
+#### Phases 3-5: See docs/planning/PLAN.md for full details
+
+### Next Actions
+- [ ] Tim finishes project triage (which of the 15 candidates make the cut?)
+- [ ] Write project .md files for selected projects
+- [ ] Draft homepage intro and about page copy
+- [ ] Create curated work history entries
+- [ ] Replace placeholder content across the site
+
+### Metrics
+- Files modified: 1 (SESSION_LOG.md)
+- Files created: 0
+
+### Learnings & Improvement Opportunities
+- None — short session, mostly decision-gathering
+
+### Continuation Prompt
+> Project: timmetz-nl
+> Session log: docs/SESSION_LOG.md
+> Section: "## Session Log: 2026-02-16 (Phase 2 Content Triage)" ([docs] entry)
+>
+> Context: Phase 2 content triage in progress. Tim made key decisions but hasn't finished marking individual projects in/out yet.
+>
+> Key points:
+> - Saent = own project entry (not folded into Lifeline)
+> - Work history = curated, not full LinkedIn dump
+> - Inside Africa important for about page; YouTube videos exist for Inside Africa, DanceTrippin, Saent, KaiOS
+> - Happylatte in work history but don't overclaim High Noon (joined after peak)
+> - Project triage table presented but not yet completed — 10 HIGH, 5 MEDIUM candidates pending Tim's in/out decisions
+> - Full research at docs/planning/RESEARCH.md
+>
+> Referenced paths:
+> - docs/planning/RESEARCH.md — Full Phase 2 research findings
+> - docs/planning/PLAN.md — Implementation plan
+> - src/content/ — Content collections (still placeholder .md files)
+> - src/pages/index.astro — Homepage (placeholder content to replace)
+>
+> Read the session log section above and the research file, familiarize yourself with the context, and let me know when ready to continue.
+
+---
+
 ## Session Log: 2026-02-15 (Phase 2 Research)
 
 **Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl

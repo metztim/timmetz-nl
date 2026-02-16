@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:saent.com)",
+      "mcp__logseq__logseq_search",
+      "mcp__logseq__logseq_search_all",
+      "mcp__logseq__logseq_get_page",
+      "Bash(python3:*)",
+      "Bash(gh pr list:*)",
+      "Bash(git rev-list:*)"
+    ]
+  }
+}

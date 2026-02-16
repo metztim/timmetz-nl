@@ -27,11 +27,11 @@ const writing = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    category: z.enum(['productivity', 'ai', 'agile', 'startup', 'africa', 'general']),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     originalUrl: z.string().url().optional(),
     originalSource: z.enum(['saent', 'animalz', 'parable', 'other']).optional(),
+    sourceName: z.string().optional(),
   }),
 });
 
