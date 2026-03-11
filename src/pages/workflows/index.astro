@@ -1,16 +1,112 @@
 ---
 import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const allWorkflows = await getCollection("workflows", ({ data }) => !data.draft);
+
+const sorted = allWorkflows.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+const allTags = [...new Set(sorted.flatMap(entry => entry.data.tags))].sort();
+
+const workflowEntries = sorted.filter(e => e.data.type === "workflow");
+const commandEntries = sorted.filter(e => e.data.type === "command");
+
+function formatDate(date: Date): string {
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${m}.${d}`;
+}
 ---
 
-<Base title="Workflows" description="AI workflows, commands, and tools by Tim Metz.">
+<Base title="Workflows" description="AI workflows, Claude Code commands, and tools I use daily.">
   <h1 class="page-title">Workflows</h1>
 
-  <div class="prose intro">
-    <p>
-      AI workflows, Claude Code commands, and tools I use daily. Coming soon.
-    </p>
-  </div>
+  {allTags.length > 0 && (
+    <div class="filter-chips" id="filter-chips">
+      {allTags.map(tag => (
+        <button class="filter-chip" data-tag={tag} type="button">
+          {tag}
+        </button>
+      ))}
+    </div>
+  )}
+
+  {sorted.length === 0 && (
+    <div class="prose intro">
+      <p>AI workflows, Claude Code commands, and tools I use daily. Coming soon.</p>
+    </div>
+  )}
+
+  {workflowEntries.length > 0 && (
+    <div class="workflow-group" data-type="workflow">
+      <h2 class="type-heading">Workflows</h2>
+      <div class="workflow-entries">
+        {workflowEntries.map(entry => (
+          <a href={`/workflows/${entry.id}`} class="workflow-entry" data-tags={entry.data.tags.join(",")}>
+            <span class="entry-title">{entry.data.title}</span>
+            <span class="entry-date">{formatDate(entry.data.pubDate)}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {commandEntries.length > 0 && (
+    <div class="workflow-group" data-type="command">
+      <h2 class="type-heading">Commands</h2>
+      <div class="workflow-entries">
+        {commandEntries.map(entry => (
+          <a href={`/workflows/${entry.id}`} class="workflow-entry" data-tags={entry.data.tags.join(",")}>
+            <span class="entry-title">{entry.data.title}</span>
+            <span class="entry-date">{formatDate(entry.data.pubDate)}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 </Base>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>(".filter-chip");
+  const entries = document.querySelectorAll<HTMLAnchorElement>(".workflow-entry");
+  const groups = document.querySelectorAll<HTMLDivElement>(".workflow-group");
+  const activeTags = new Set<string>();
+
+  chips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      const tag = chip.dataset.tag!;
+
+      if (activeTags.has(tag)) {
+        activeTags.delete(tag);
+        chip.classList.remove("active");
+      } else {
+        activeTags.add(tag);
+        chip.classList.add("active");
+      }
+
+      filterEntries();
+    });
+  });
+
+  function filterEntries() {
+    const noFilter = activeTags.size === 0;
+
+    entries.forEach(entry => {
+      const entryTags = (entry.dataset.tags || "").split(",").filter(Boolean);
+      const match = noFilter || entryTags.some(t => activeTags.has(t));
+      entry.style.display = match ? "" : "none";
+    });
+
+    groups.forEach(group => {
+      const visibleEntries = group.querySelectorAll<HTMLAnchorElement>(
+        '.workflow-entry:not([style*="display: none"])'
+      );
+      group.style.display = visibleEntries.length > 0 ? "" : "none";
+    });
+  }
+</script>
 
 <style>
   .page-title {
@@ -20,5 +116,90 @@ import Base from "../../layouts/Base.astro";
 
   .intro {
     color: var(--color-text-muted);
+  }
+
+  .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-chip {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 0.25rem 0.625rem;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+
+  .filter-chip:hover {
+    color: var(--color-text-secondary);
+    border-color: var(--color-text-muted);
+  }
+
+  .filter-chip.active {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  }
+
+  .workflow-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .workflow-group:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .type-heading {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: 0.375rem;
+  }
+
+  .workflow-entries {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .workflow-entry {
+    display: flex;
+    align-items: baseline;
+    text-decoration: none;
+    padding: 3px 0;
+  }
+
+  .entry-title {
+    flex: 1;
+    font-weight: 450;
+    color: var(--color-text-secondary);
+    transition: color 150ms ease;
+  }
+
+  .workflow-entry:hover .entry-title {
+    color: var(--color-accent);
+  }
+
+  .entry-date {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-left: 1.5rem;
+    flex-shrink: 0;
+    min-width: 3rem;
+    text-align: right;
+  }
+
+  @media (max-width: 767px) {
+    .entry-date {
+      margin-left: 1rem;
+    }
   }
 </style>

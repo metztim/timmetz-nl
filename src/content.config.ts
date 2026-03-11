@@ -50,6 +50,21 @@ const work = defineCollection({
   }),
 });
 
+const workflows = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/workflows' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    type: z.enum(['workflow', 'command']),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+    tool: z.string().optional(),
+    complexity: z.enum(['simple', 'intermediate', 'advanced']).optional(),
+  }),
+});
+
 const media = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/media' }),
   schema: z.object({
@@ -63,4 +78,4 @@ const media = defineCollection({
   }),
 });
 
-export const collections = { projects, writing, work, media };
+export const collections = { projects, writing, work, media, workflows };
