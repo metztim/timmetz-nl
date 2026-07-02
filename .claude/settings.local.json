@@ -9,5 +9,9 @@
       "Bash(gh pr list:*)",
       "Bash(git rev-list:*)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "subframe",
+    "subframe-docs"
+  ]
 }
