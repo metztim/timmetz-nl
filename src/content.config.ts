@@ -30,8 +30,19 @@ const writing = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     originalUrl: z.string().url().optional(),
-    originalSource: z.enum(['saent', 'animalz', 'parable', 'other']).optional(),
     sourceName: z.string().optional(),
+    excerpt: z.string().optional(),
+    lang: z.string().optional(),
+  }),
+});
+
+const posts = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
+  schema: z.object({
+    pubDate: z.coerce.date(),
+    linkedinUrl: z.string().url().optional(),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
   }),
 });
 
@@ -78,4 +89,4 @@ const media = defineCollection({
   }),
 });
 
-export const collections = { projects, writing, work, media, workflows };
+export const collections = { projects, writing, work, media, workflows, posts };

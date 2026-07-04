@@ -1,99 +1,96 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects", ({ data }) => data.featured))
+  .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+const writing = (await getCollection("writing", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 6);
+
+const writingByYear = writing.reduce((groups, entry) => {
+  const year = entry.data.pubDate.getFullYear().toString();
+  (groups[year] ??= []).push(entry);
+  return groups;
+}, {} as Record<string, typeof writing>);
+const years = Object.keys(writingByYear).sort((a, b) => Number(b) - Number(a));
+
+const work = (await getCollection("work"))
+  .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
+  .slice(0, 4);
+
+function formatDate(date: Date): string {
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const dd = String(date.getDate()).padStart(2, "0");
+  return `${mm}.${dd}`;
+}
+
+function formatYear(date: Date): string {
+  return date.getFullYear().toString();
+}
 ---
 
 <Base>
   <p class="intro">
-    I build things at the intersection of productivity, AI, and software.
-    Currently leading AI infrastructure at <a href="/about">Animalz</a> and
-    building <a href="/projects/lifeline">Lifeline</a>, a macOS focus timer.
+    I build things at the intersection of productivity, AI, and content.
+    Currently leading marketing and AI innovation at <a href="/about">Animalz</a>,
+    building <a href="/projects/lifeline">Lifeline</a>, and writing
+    <a href="/projects/we-eat-robots">We Eat Robots</a>.
   </p>
 
   <section class="section">
     <h2>Projects</h2>
     <ul class="project-list">
-      <li>
-        <a href="/projects/lifeline" class="project-name">Lifeline</a>
-        <span class="project-desc"> &mdash; macOS focus timer (4.8&#9733; on App Store)</span>
-      </li>
-      <li>
-        <a href="/projects/we-eat-robots" class="project-name">We Eat Robots</a>
-        <span class="project-desc"> &mdash; AI newsletter on Substack</span>
-      </li>
-      <li>
-        <a href="/projects/claude-carbon" class="project-name">Claude Carbon</a>
-        <span class="project-desc"> &mdash; VS Code theme</span>
-      </li>
-      <li>
-        <a href="/projects/claudequote" class="project-name">ClaudeQuote</a>
-        <span class="project-desc"> &mdash; Quote collection app</span>
-      </li>
-      <li>
-        <a href="/projects/my-os" class="project-name">My-OS</a>
-        <span class="project-desc"> &mdash; Personal automation system</span>
-      </li>
+      {projects.map(project => (
+        <li>
+          <a href={`/projects/${project.id}`} class="project-name">{project.data.title}</a>
+          <span class="project-desc"> &mdash; {project.data.description}</span>
+        </li>
+      ))}
     </ul>
     <a href="/projects" class="more-link">&rarr; all projects</a>
   </section>
 
-  <section class="section">
-    <h2>Writing</h2>
-    <div class="writing-group">
-      <h3 class="year-heading">2026</h3>
-      <div class="writing-entries">
-        <a href="#" class="writing-entry">
-          <span class="entry-title">Building in Public with AI</span>
-          <span class="entry-date">02.10</span>
-        </a>
-        <a href="#" class="writing-entry">
-          <span class="entry-title">The Case for Focused Work in 2026</span>
-          <span class="entry-date">01.15</span>
-        </a>
-      </div>
-    </div>
-    <div class="writing-group">
-      <h3 class="year-heading">2025</h3>
-      <div class="writing-entries">
-        <a href="#" class="writing-entry">
-          <span class="entry-title">How We Built an AI Content Engine</span>
-          <span class="entry-date">11.22</span>
-        </a>
-        <a href="#" class="writing-entry">
-          <span class="entry-title">Why I Switched to Claude for Everything</span>
-          <span class="entry-date">09.08</span>
-        </a>
-        <a href="#" class="writing-entry">
-          <span class="entry-title">Lessons from 7 Years of Bootstrapping</span>
-          <span class="entry-date">06.14</span>
-        </a>
-      </div>
-    </div>
-    <a href="/writing" class="more-link">&rarr; all writing</a>
-  </section>
+  {years.length > 0 && (
+    <section class="section">
+      <h2>Writing</h2>
+      {years.map(year => (
+        <div class="writing-group">
+          <h3 class="year-heading">{year}</h3>
+          <div class="writing-entries">
+            {writingByYear[year].map(entry =>
+              entry.data.originalUrl ? (
+                <a href={entry.data.originalUrl} class="writing-entry" target="_blank" rel="noopener noreferrer">
+                  <span class="entry-title">{entry.data.title} &nearr;</span>
+                  <span class="entry-date">{formatDate(entry.data.pubDate)}</span>
+                </a>
+              ) : (
+                <a href={`/writing/${entry.id}`} class="writing-entry">
+                  <span class="entry-title">{entry.data.title}</span>
+                  <span class="entry-date">{formatDate(entry.data.pubDate)}</span>
+                </a>
+              )
+            )}
+          </div>
+        </div>
+      ))}
+      <a href="/writing" class="more-link">&rarr; all writing</a>
+    </section>
+  )}
 
   <section class="section">
     <h2>Work</h2>
     <ul class="work-list">
-      <li>
-        <span class="work-company">Animalz</span>
-        <span> &mdash; AI Infrastructure Lead </span>
-        <span class="work-dates">(2023&ndash;present)</span>
-      </li>
-      <li>
-        <span class="work-company">Animalz</span>
-        <span> &mdash; Content Marketing </span>
-        <span class="work-dates">(2019&ndash;2023)</span>
-      </li>
-      <li>
-        <span class="work-company">SAENT</span>
-        <span> &mdash; Founder &amp; CEO </span>
-        <span class="work-dates">(2015&ndash;2022)</span>
-      </li>
-      <li>
-        <span class="work-company">KOS</span>
-        <span> &mdash; Co-founder </span>
-        <span class="work-dates">(2011&ndash;2015)</span>
-      </li>
+      {work.map(entry => (
+        <li>
+          <span class="work-company">{entry.data.company}</span>
+          <span> &mdash; {entry.data.title} </span>
+          <span class="work-dates">
+            ({formatYear(entry.data.startDate)}&ndash;{entry.data.endDate ? formatYear(entry.data.endDate) : "present"})
+          </span>
+        </li>
+      ))}
     </ul>
     <a href="/about" class="more-link">&rarr; full history</a>
   </section>

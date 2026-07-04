@@ -1,13 +1,15 @@
 ---
 title: "We Eat Robots"
-description: "AI newsletter covering the latest in artificial intelligence, tools, and workflows."
+description: "Newsletter about staying productive and human in the AI era"
 status: active
 role: "Author"
-startDate: 2024-01-01
+startDate: 2024-07-01
 url: "https://weeatrobots.substack.com"
-tags: ["ai", "writing", "newsletter"]
+tags: ["ai", "writing", "productivity"]
 featured: true
 sortOrder: 2
 ---
 
-A Substack newsletter about AI — tools, workflows, and what's actually useful.
+We Eat Robots is my newsletter about productivity for humans in the age of AI: how to use these tools without letting them use you, and how to keep thinking for yourself while working alongside machines that think fast.
+
+It reaches 5,000+ subscribers and doubles as the workbench for a longer-term book project on excelling in an AI-driven future through human strengths.
