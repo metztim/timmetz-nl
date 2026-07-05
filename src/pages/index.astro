@@ -29,9 +29,28 @@ function formatDate(date: Date): string {
 function formatYear(date: Date): string {
   return date.getFullYear().toString();
 }
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Tim Metz",
+  url: "https://timmetz.nl",
+  jobTitle: "Director of Marketing & Innovation",
+  worksFor: { "@type": "Organization", name: "Animalz" },
+  description:
+    "Tim Metz builds things at the intersection of productivity, AI, and content. Marketing and AI innovation lead at Animalz, maker of Lifeline, and author of We Eat Robots.",
+  knowsAbout: ["Artificial Intelligence", "Productivity", "Content Marketing", "Software Development"],
+  sameAs: [
+    "https://www.linkedin.com/in/metztim",
+    "https://github.com/metztim",
+    "https://x.com/timmetz",
+    "https://timmetz.medium.com",
+    "https://weeatrobots.substack.com",
+  ],
+};
 ---
 
-<Base>
+<Base jsonLd={personSchema}>
   <p class="intro">
     I build things at the intersection of productivity, AI, and content.
     Currently leading marketing and AI innovation at <a href="/about">Animalz</a>,

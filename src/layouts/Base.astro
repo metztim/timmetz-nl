@@ -10,9 +10,10 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogType?: string;
+  jsonLd?: object;
 }
 
-const { title, description, ogImage, ogType } = Astro.props;
+const { title, description, ogImage, ogType, jsonLd } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -22,7 +23,8 @@ const currentPath = Astro.url.pathname;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <SEOHead title={title} description={description} ogImage={ogImage} ogType={ogType} />
+  <link rel="alternate" type="application/rss+xml" title="Tim Metz — Writing" href="/rss.xml" />
+  <SEOHead title={title} description={description} ogImage={ogImage} ogType={ogType} jsonLd={jsonLd} />
   <script is:inline>
     (function() {
       var saved = localStorage.getItem('theme');
