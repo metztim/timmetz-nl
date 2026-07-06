@@ -2,6 +2,138 @@
 
 ---
 
+## Session Log: 2026-07-05 (Plan revision + Phase A content + Phase B code)
+
+**Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
+**Session ID**: 54a13006-1870-47b4-a08a-93c145ac6179
+**Type**: [feature] [docs]
+
+### Objectives
+- Reassess the stale Feb plan against Tim's expanded vision (complete repository of all his work; migrate Saent/Lifeline/WER; pointer entries for Animalz/Parable; vibe-coding projects; LinkedIn/quote imports; future automation)
+- Decide sequencing: design system vs. website, and when to redo UX with Claude Design
+- Execute Phase A (real content replacing placeholders) and Phase B code half (RSS, robots, structured data)
+
+### Summary
+Revised `docs/planning/PLAN.md` into a plan-of-record with a 6-phase roadmap (A content → B soft-launch → C content waves → D UX redo → E polish/LLM → F automation). Four key decisions locked via Tim: content-before-design, soft-launch-early, We Eat Robots migrates in (list to a light ESP then close Substack), all 10 HIGH projects in. Then built Phase A: deleted all fabricated placeholder content, wrote 12 real project entries + 10 curated work-history entries (all links/dates verified against repos and the App Store), made the homepage collection-driven, wrote the real about-page bio. Then Phase B code half: RSS feed at `/rss.xml`, `robots.txt`, `Person` JSON-LD on the homepage, RSS autodiscovery link. Both phases committed and **pushed to GitHub** (`b7720d6` Phase A, `4ad7865` Phase B). Deploy half of Phase B (Cloudflare Pages + DNS) is Tim's to drive next.
+
+### Files Changed
+- `docs/planning/PLAN.md` — Full rewrite: new vision, 4 decisions of record, 6-phase roadmap, Notion task→phase mapping
+- `src/content.config.ts` — Dropped `originalSource` enum; added `excerpt`/`lang` to writing; new `posts` collection (LinkedIn imports)
+- `src/content/projects/*.md` — 12 real entries (lifeline, saent, we-eat-robots, animalz-intelligence-os, claude-code-plugins, sentinel, myscreen, claude-carbon, claudequote, creativity-guard, md-clip, my-os); deleted 3 fabricated placeholders
+- `src/content/work/*.md` — 10 curated entries (animalz-innovation, animalz-content, kaios, saent, happylatte, dancetrippin-md, yourzine-china, sherpa-media, dancetrippin-production, lectric); deleted placeholder animalz-ai.md
+- `src/pages/index.astro` — Now collection-driven (featured projects, recent writing, recent work); added Person JSON-LD
+- `src/pages/about.astro` — Real 5-paragraph bio (career arc, Inside Africa, locations, Koh Samui, built-with-Claude-Code)
+- `src/components/Sidebar.astro`, `MobileFooter.astro` — Fixed handles: github.com/metztim, linkedin.com/in/metztim (were /timmetz, wrong)
+- `src/components/SEOHead.astro` — Real default description; added `jsonLd` prop → `<script type=ld+json>`
+- `src/layouts/Base.astro` — RSS autodiscovery `<link>`; threaded `jsonLd` prop through to SEOHead
+- `src/pages/rss.xml.js` — New RSS feed (handles hosted + pointer writing entries)
+- `public/robots.txt` — New; allows all, points at sitemap
+- `package.json` — Added `@astrojs/rss`
+
+### Referenced Materials
+- `docs/planning/RESEARCH.md` — Feb Phase 2 research (career timeline, project inventory, press) — primary source for content; gitignored/local-only
+- `docs/planning/DESIGN_RESEARCH.md` — Design decisions reference; still valid for the Phase D redo
+- Notion project "Timmetz.nl" (`2d9edc77-7df2-80af-8492-e39619beedb7`, personal) + its 10 linked tasks
+- GitHub repo `github.com/metztim/timmetz-nl` (public)
+- Verified: repo creation dates (GitHub API), Lifeline App Store id 1526186940, WER branding notes (Logseq 2024-07)
+
+### Tracked in Notion
+- **"Timmetz.nl"** (Personal Projects/project, `2d9edc77-7df2-80af-8492-e39619beedb7`, personal) — primary anchor; roadmap now in PLAN.md
+- **"Footer + copy sweep before launch"** (`357edc77-7df2-81d1-94a9-eb208b847afb`, personal) — DONE this session (Phase A copy sweep + handle fixes)
+- **"Pick host (likely Cloudflare) and finish deploy"** (`357edc77-7df2-81fe-b3ea-dd63c08ce264`, personal) — Phase B; code done, deploy pending Tim
+- **"Clean up timmetz.nl DNS remainder + add Google DKIM"** (`340edc77-7df2-8103-881d-cd4cc6ddc785`, personal) — folds into Phase B deploy
+- **"Strengthen personal online presence so LLMs cite me"** (`379edc77-7df2-819a-9dff-cc9056f579aa`, personal) — Phase B interlink + E; Person JSON-LD is first step
+- **"Build external articles index"** (`357edc77-7df2-8122-81eb-d095f520c78e`, personal) — Phase C1
+- **"Transfer Webflow to timmetz.nl and shut down"** (`1bfedc77-7df2-80e7-9611-cd184e0f426a`, personal) — Phase C2 (time-sensitive: export before shutdown)
+- **"Export Medium posts"** (`2d9edc77-7df2-8039-ad8b-cb99628a91d6`, personal) — Phase C3
+- **"Create a design system with Claude Design"** (`38cedc77-7df2-8033-806d-fa97aa1671c3`, personal) — RESEQUENCED to Phase D (extract from finished site, not build up front)
+- **"Auto-publish hook for new global commands/workflows"** (`357edc77-7df2-81c6-bb85-fd019af1fe47`, personal) — Phase F
+- **Continuation prompt posted to:** "Timmetz.nl" (`2d9edc77-7df2-80af-8492-e39619beedb7`, personal) — comment id `395edc77-7df2-81b9-a264-001dd34cfebc`
+
+### Technical Notes
+- Canonical tags + sitemap already existed from Phase 1 — Phase B only needed RSS, robots, JSON-LD
+- RSS/JSON-LD reuse pattern: `jsonLd` object prop flows Base → SEOHead → `set:html={JSON.stringify(...)}`
+- Writing/Workflows collections are empty → build prints "collection does not exist or is empty" warnings; harmless, resolves when content lands
+- Corrected Feb research error: Claude Carbon is a macOS carbon-tracking menu bar app, NOT a VS Code theme
+- Removed fabricated placeholders (fake App Store URL, "SAENT Founder & CEO", "KOS co-founder") per fail-fast/no-fabrication rule
+- Build: 17 pages clean. Two commits pushed to public repo main.
+
+### Future Plans & Unimplemented Phases
+
+#### Phase B: soft launch — DEPLOY HALF remaining (Tim drives)
+**Status**: Code done + pushed. Deploy pending.
+**Steps**:
+1. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → `timmetz-nl`. Settings: preset Astro, build `npm run build`, output `dist`, env `NODE_VERSION=20`
+2. Verify the `*.pages.dev` URL
+3. Custom domain: add `timmetz.nl` (DNS already on Cloudflare, wires CNAME automatically) — closes the DNS-remainder task
+4. Then: interlink LinkedIn/Animalz/WER bios → timmetz.nl
+
+#### Phase C: content waves (independent, interleavable)
+- **C1 external article index** (fast win): Animalz + Parable author pages, Entrepreneur/InVision/Zapier/KaiOS one-offs → pointer entries (frontmatter + excerpt, link out). No scraping — canonical lists per source.
+- **C2 Saent import** (time-sensitive): Webflow CMS CSV export BEFORE shutdown; ~228 posts → Markdown, preserve dates; Saent DNS → Cloudflare; bulk 301 old→new; verify GSC; close Webflow
+- **C3 Medium export**: "En Route to Saenthood" series + essays → hosted entries
+- **C4 WER migration**: Substack export → hosted; pick ESP (Buttondown vs Kit); export subscriber list; final Substack post; keep publication dormant/redirect
+- **C5 LinkedIn posts**: import script Notion MyContent DB (`131edc77-7df2-80be-a79e-edc6e0955fc2`) → `posts` collection
+- **C6 archive recovery**: locate Africa writing (Dropbox/backups/Logseq/archive.org insideafrica.tv); video inventory → `media` entries w/ YouTube embeds
+
+#### Phase D: UX redo with Claude Design (after A + C1 + C2 content volume exists)
+Brand-foundations mini-brief → redesign against real pages (archive-depth IA: filters, highlights-vs-everything, era orientation, media/posts surfacing) → implement → **then extract design system** (the resequenced Notion task runs here).
+
+#### Phase E: polish + LLM optimization
+OG images (satori+sharp); Article JSON-LD on posts, BreadcrumbList; markdown-for-agents via content negotiation + llms.txt; Lighthouse 95+; arch/code review.
+
+#### Phase F: automation
+Auto-publish hook commands/workflows → `/workflows`; morning-brief quote → `notes` collection (schema reserved); MyContent → `posts` sync command. Agent-mistake threat model: prepare autonomously, publish = git push from Mac.
+
+### Next Actions
+- [ ] Tim: connect Cloudflare Pages + custom domain (Phase B deploy half) — runbook in PLAN.md and this log
+- [ ] Decide project statuses: are md-clip / ClaudeQuote really `active` or should some be `on-ice`? (11 of 12 currently active = dense listing)
+- [ ] Sanity-check judgment calls: WER startDate 2024, Saent work "2014–present", Animalz Intelligence OS dated Dec 2025
+- [ ] Then start Phase C1 (external article index — fastest content win) or C2 (Saent, time-sensitive)
+- [ ] PLAN.md is gitignored (public repo) — not git-backed; decide whether to commit it or mirror to my-os/docs/plans/
+
+### Metrics
+- Files created: ~25 content .md + rss.xml.js + robots.txt; Files modified: ~8; Files deleted: 4 placeholders
+- Commits: 2 (`b7720d6`, `4ad7865`), both pushed. Build: 17 pages clean.
+
+### Learnings & Improvement Opportunities
+**Workflow improvements:**
+- Feb research had two factual errors (Claude Carbon; fabricated placeholder facts) that survived into content stubs — verifying every link/date against source (GitHub API, App Store) before writing caught them. Worth doing by default for any bio/portfolio content.
+- PLAN.md living in gitignored `docs/planning/` on a public repo means the plan-of-record is not git-backed (same risk class as the lost Mengtian plan). Flagged to Tim; unresolved.
+
+### Notion Sync
+- "Footer + copy sweep before launch" (`357edc77-7df2-81d1...`) → **Done**
+- "Pick host + finish deploy" (`357edc77-7df2-81fe...`) → **In Progress**
+- Timmetz.nl project (`2d9edc77-7df2-80af...`) → **In Progress** (was Backlog)
+- "Create a design system with Claude Design" (`38cedc77-7df2-8033...`) → Agent Context note added: resequenced to Phase D (extract from finished site)
+
+### Improvements & fixes
+- **[done]** Mirrored PLAN.md → `~/Developer/Projects/system/my-os/docs/plans/2026-07-05-timmetz-nl-roadmap.md` (git-backed durable snapshot; committed `bc30c7c`). Working copy remains canonical at `docs/planning/PLAN.md`.
+- **[skipped]** Codify verify-before-bio-content rule — not queued (Tim did not select).
+
+### Continuation Prompt
+> Project: timmetz-nl
+> Session log: docs/SESSION_LOG.md
+> Section: "## Session Log: 2026-07-05 (Plan revision + Phase A content + Phase B code)"
+>
+> Context: Revised the plan-of-record (docs/planning/PLAN.md, 6-phase roadmap A–F) and completed Phase A (real content replacing all placeholders) + Phase B code half (RSS, robots.txt, Person JSON-LD). Both committed and pushed to GitHub. Site builds clean (17 pages) but is NOT deployed yet.
+>
+> Key points:
+> - Decisions locked: content-before-design, soft-launch-early, WER migrates in (light ESP then close Substack), all 10 HIGH projects in
+> - Phase B DEPLOY HALF is next and Tim drives it: Cloudflare Pages (preset Astro, build `npm run build`, output `dist`, NODE_VERSION=20) + custom domain timmetz.nl (DNS already on Cloudflare). Runbook is in PLAN.md.
+> - After deploy: Phase C content waves — C1 external article index (fast win) or C2 Saent Webflow export (time-sensitive, export before shutdown)
+> - Open judgment calls to confirm: project statuses (11/12 active is dense), WER/Saent/AIOS dates
+> - PLAN.md is gitignored (public repo) — not git-backed; Tim to decide whether to commit or mirror to my-os/docs/plans/
+>
+> Referenced paths:
+> - docs/planning/PLAN.md — plan-of-record with full A–F roadmap + Cloudflare runbook
+> - docs/planning/RESEARCH.md — Feb research (career timeline, content inventory), local-only
+> - src/content.config.ts — schemas (posts collection added; writing tweaked)
+>
+> Read the session log section above, familiarize yourself with the context, and let me know when ready to continue.
+
+---
+
 ## Session Log: 2026-02-16 (Tag Filters, Workflows Stub, Schema Updates)
 
 **Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
