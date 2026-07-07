@@ -3,7 +3,9 @@ import Post from "../../layouts/Post.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const writing = await getCollection("writing");
+  // Pointer entries (originalUrl set) live on their canonical external site —
+  // the index links straight out, so no detail page is generated for them.
+  const writing = await getCollection("writing", ({ data }) => !data.originalUrl);
   return writing.map(post => ({
     params: { slug: post.id },
     props: { post },
