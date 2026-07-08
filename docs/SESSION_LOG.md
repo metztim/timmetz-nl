@@ -2,6 +2,114 @@
 
 ---
 
+## Session Log: 2026-07-08 - launch-deploy-saent-migration-africa-recovery
+
+**Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
+**Session ID**: feb5c569-aed0-4f52-8985-1e17373ab683
+**Type**: [feature] [config] [docs]
+
+### Objectives
+- Continue the timmetz.nl roadmap from the Phase B code state: get the site deployed and on its domain, then execute content waves.
+- Phase B deploy + custom domain; Phase C1 external article index; Phase C2 Saent Webflow migration + retirement; Phase C6 Inside Africa archive recovery.
+
+### Summary
+Launched timmetz.nl end-to-end in one long session. Deployed to Cloudflare Pages, wired the domain (kept DNS at TransIP: `www` CNAME → Pages, bare domain → TransIP web-forward → www). Built the writing archive to **227 entries**: 73 external-article pointer entries (C1), 143 hosted Saent blog posts migrated from Webflow (C2), 11 recovered Inside Africa 2006 travel essays (C6). Fully retired saent.com — moved its DNS to Cloudflare, deployed a wildcard 301 redirect ruleset via the Cloudflare API (all 143 posts + every page), and migrated its catch-all email forwarding to Cloudflare Email Routing. Updated the Notion project, task statuses, and created a System Docs architecture page.
+
+### Files Changed
+- `src/content.config.ts` — `writing.description` made optional (pointer entries carry title/date/excerpt only)
+- `src/pages/writing/[...slug].astro` — `getStaticPaths` filters out `originalUrl` entries (no empty detail pages for pointers)
+- `src/content/writing/*.md` — +73 pointer entries (Animalz 38, KaiOS 17, Parabol 14, InVision 2, Entrepreneur 1, Zapier 1); +143 hosted Saent posts; +11 Inside Africa essays; −8 non-Tim Saent posts removed
+- `public/images/saent/**` — 221 Saent in-body images self-hosted, optimized to WebP (78 MB → 19 MB)
+- Commits (all pushed to `main`): `cf1f299` C1, `d8d21a7` C2 migrate, `3e8430a` C2 authorship cleanup, `a7cea8e` C6 Africa
+
+### Referenced Materials
+- `docs/planning/PLAN.md` — roadmap A–F (plan of record)
+- `docs/planning/RESEARCH.md` — Feb research: platforms, article inventory
+- `/Users/timmetz/Developer/Projects/SaentLifeline/CLAUDE.md` — Saent Webflow IDs (site `608277562b44af17b05dc556`, Blog Posts collection `60852ab6fa3c223bb0d250bb`) + release-post publishing flow (needs repointing)
+- Cloudflare API (redirect ruleset + DNS via scoped token, now revoked); Webflow MCP (Saent export); Internet Archive Wayback Machine (Inside Africa recovery)
+- saent.com zone id `6c4657e28f872bd334d4e5541d84beb5`; CF nameservers `bart`/`mallory.ns.cloudflare.com`
+
+### Tracked in Notion
+- **"💻 Timmetz.nl"** (Projects, `2d9edc77-7df2-80af-8492-e39619beedb7`, personal) — body updated with launch BLUF; primary anchor
+- **"Pick host + finish deploy"** (`357edc77-7df2-81fe-b3ea-dd63c08ce264`) → **Done**
+- **"Clean up timmetz.nl DNS remainder"** (`340edc77-7df2-8103-881d-cd4cc6ddc785`) → **Done**
+- **"Build external articles index"** (`357edc77-7df2-8122-81eb-d095f520c78e`) → **Done** (C1)
+- **"Transfer Webflow to timmetz.nl and shut down"** (`1bfedc77-7df2-80e7-9611-cd184e0f426a`) → **In Progress** (content + redirects + email done; Webflow closure pending)
+- **NEW "Repoint SaentLifeline release-post publishing to timmetz.nl"** (`397edc77-7df2-81e3-a677-cd4ff8cac413`) — agent-eligible
+- **NEW "Interlink external bios → timmetz.nl"** (`397edc77-7df2-8176-b961-d12f5110320d`) — assigned Tim
+- **NEW System Docs page "timmetz.nl — website architecture, hosting & DNS"** (`397edc77-7df2-8108-9f4e-c7b6398634be`, personal, Status: Current)
+- **Continuation prompt posted to:** "💻 Timmetz.nl" (`2d9edc77-7df2-80af-8492-e39619beedb7`, personal) — comment id `397edc77-7df2-81df-bc99-001d883d1d4e`
+
+### Technical Notes
+- **Domain (kept at TransIP):** Cloudflare Pages requires the zone on Cloudflare for an *apex* custom domain, so `timmetz.nl` uses `www` CNAME → `timmetz-nl.pages.dev` + bare-domain TransIP web-forward (`Doorsturen`, SSL on, 301) → www. Google Workspace email untouched. Nameserver move NOT needed.
+- **saent.com retirement:** DNS moved Namecheap → Cloudflare. Redirect rules via Cloudflare rulesets API (`http_request_dynamic_redirect`): `/blog/{slug}`→`/writing/{slug}` (dynamic `concat`+`substring`), `/blog`+8-removed→`/writing`, `/`+`/lifeline`→`/projects/lifeline`, catch-all→`/projects/saent`. Verified full chains resolve 200.
+- **Email:** Cloudflare Email Routing catch-all `*@saent.com`→`tim@timmetz.nl`. Gotcha: enable is blocked until the zone is active AND conflicting `eforward` MX are removed. Tim deleted the 5 `eforward` MX in the dashboard → Email Routing auto-enabled → MX now `route*.mx.cloudflare.net`. Verified + test email confirmed.
+- **Safety guards (working as intended):** the auto-mode classifier blocked API attempts to enable Email Routing / delete live MX — correct for live-mail changes; those stayed human-gated.
+- **Cloudflare API token:** scoped (saent.com: DNS + Single Redirect + Email Routing Rules), stored at `~/.cf-saent-token`, used via `curl`. Now revoked + local file deleted.
+- **Saent images:** in-body images self-hosted (Webflow CDN dies at shutdown), converted to WebP (sharp, q80, capped 1600px): 78 MB → 19 MB; amended commit so the PNGs never entered pushed history.
+- **Africa recovery:** subagent enumerated the Wayback Machine; 11 Tim-authored pieces (10 diary essays + 1 film review, Jan–Jun 2006), co-author Desmond Nganga excluded. HTML→Markdown via table-chunk extraction (title → paragraphs → "Want to comment" boundary). Partial set — most of the ~70-entry diary was never archived; in-article images mostly lost.
+- **zsh gotcha:** `for` loops over `$(...)` lost `$PATH` ("command not found: curl/head"); fixed by writing loops to bash script files.
+
+### Plan File
+- **Path**: `~/.claude/plans/project-timmetz-nl-session-log-radiant-flute.md`
+- **Status**: Completed (C1 plan; expanded well beyond into B/C2/C6)
+
+### Future Plans & Unimplemented Phases
+
+#### Cancel Webflow (gated on publishing repoint)
+Cancelling Webflow breaks nothing live (redirects are Cloudflare-edge, never hit Webflow origin). Only the Lifeline release-post publishing flow still targets saent.com/blog via Webflow MCP — repoint it (Notion task `397edc77...e3`) to publish timmetz.nl `writing` entries, THEN cancel Webflow.
+
+#### Phase C3/C4/C5 content waves (not started)
+- C3 Medium export ("En Route to Saenthood" + essays) → hosted entries
+- C4 We Eat Robots migration (Substack export → hosted; pick ESP; export subscriber list; final Substack post + redirect)
+- C5 LinkedIn posts import from Notion MyContent DB (`131edc77-7df2-80be-a79e-edc6e0955fc2`) → `posts` collection
+
+#### Phase D UX/design redo (not started)
+Now that real content volume exists (A + C1 + C2), run the `design-reference` flow: brand mini-brief → redesign against real pages (archive-depth IA: filters, highlights-vs-everything, era orientation, media/posts surfacing) → implement → extract design system.
+
+#### Phase E polish (not started)
+OG images (satori+sharp); Article JSON-LD; llms.txt / markdown-for-agents; Lighthouse 95+. Also: **analytics** — recommended Cloudflare Web Analytics (beacon on Pages) + Google Search Console; skip GA4.
+
+### Next Actions
+- [ ] Repoint SaentLifeline release-post publishing off Webflow → then cancel Webflow
+- [ ] Interlink external bios (LinkedIn / Animalz author / WER) → timmetz.nl (Claude can draft copy per platform)
+- [ ] C3 Medium / C4 WER / C5 LinkedIn imports
+- [ ] Phase D design redo
+- [x] Deploy + custom domain; C1; C2 (redirects + email, verified); C6 Africa; revoke CF token
+
+### Metrics
+- Writing entries: 227 (73 pointer + 143 Saent + 11 Africa); removed 8 non-Tim Saent posts
+- Images: 221 self-hosted WebP (19 MB)
+- Commits pushed: 4 (`cf1f299`, `d8d21a7`, `3e8430a`, `a7cea8e`) + docs
+- Site build: 171 pages, clean
+
+### Learnings & Improvement Opportunities
+**Workflow improvements:**
+- zsh `for` loops over command substitution can lose `$PATH` in this shell — write multi-step loops to bash script files and `bash` them, rather than inline zsh loops.
+- Cloudflare Pages apex custom domains require the zone on Cloudflare; the "keep DNS at registrar, use www CNAME + apex forward" pattern is the workaround when the user won't move nameservers. Documented in the new System Docs page.
+- Live-mail DNS changes (enable Email Routing, delete MX) are correctly auto-mode-blocked — plan email cutover steps as human-gated dashboard actions, not API calls.
+
+### Continuation Prompt
+Project: timmetz-nl
+Session log: docs/SESSION_LOG.md
+Section: "## Session Log: 2026-07-08 - launch-deploy-saent-migration-africa-recovery" (Session ID feb5c569-aed0-4f52-8985-1e17373ab683)
+
+Context: timmetz.nl is LAUNCHED and live at www.timmetz.nl (Cloudflare Pages + Astro). 227 writing entries (73 external pointers, 143 hosted Saent posts, 11 recovered 2006 Inside Africa essays). saent.com fully retired: DNS on Cloudflare, wildcard 301 redirects + Email Routing catch-all, all verified working. Notion project/tasks + a System Docs page are current.
+
+Key points:
+- Domain: DNS stays at TransIP (www CNAME → Pages, bare → TransIP forward → www); Google Workspace email untouched. Cloudflare API token was revoked.
+- Remaining: repoint SaentLifeline release-post publishing off Webflow (Notion task `397edc77-7df2-81e3-a677-cd4ff8cac413`) → then cancel Webflow; interlink external bios (task `397edc77-7df2-8176-b961-d12f5110320d`); C3 Medium / C4 We Eat Robots / C5 LinkedIn imports; Phase D design redo; analytics (Cloudflare Web Analytics + GSC).
+- Publishing new content = add Markdown to src/content/writing/ + git push (Cloudflare auto-builds).
+
+Referenced paths:
+- docs/planning/PLAN.md — roadmap A–F
+- src/content.config.ts — collections (writing schema: pointer vs hosted via originalUrl)
+- Notion project "💻 Timmetz.nl" (2d9edc77-7df2-80af-8492-e39619beedb7, personal)
+
+Read the session log section above, familiarize yourself with the context, and let me know when ready to continue.
+
+---
+
 ## Session Log: 2026-07-05 (Plan revision + Phase A content + Phase B code)
 
 **Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
