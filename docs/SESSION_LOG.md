@@ -21,6 +21,20 @@ Traced the reported bug to markdown link syntax, not embeds: the Webflow export 
 - `src/content/writing/consistency.md`, `early-rising.md`, `essentialism-greg-mckeown.md`, `seven-questions-planning-day.md` — removed trailing dead newsletter-form skeleton + raw `document.write()` JS blob
 - `src/content/writing/find-your-focus-challenge-2022.md` — same JS blob removed, plus the orphaned "registration is closed, leave your email below" heading and its empty Submit form
 
+### Tracked in Notion
+- **"💻 Timmetz.nl"** (Projects, `2d9edc77-7df2-80af-8492-e39619beedb7`, personal) — primary anchor
+- **NEW "Sweep remaining writing entries for Webflow migration artifacts"** (Personal Tasks, `3c6edc77-7df2-81a7-a20b-f33612bf048d`) — Not Started, agent-eligible; body carries the detection greps
+- **"Verify Webflow was cancelled and finish shutdown"** (`1bfedc77-7df2-80e7-9611-cd184e0f426a`) — unchanged (In Progress); progress comment added noting the migrated content now renders correctly
+- **Continuation prompt posted to:** "💻 Timmetz.nl" (`2d9edc77-7df2-80af-8492-e39619beedb7`, personal) — comment id `3c6edc77-7df2-8166-9870-001daa782eb8`
+
+### Notion Sync
+- Created task `3c6edc77-7df2-81a7-a20b-f33612bf048d` under the Timmetz.nl project (no duplicate found among the 8 open tasks on that project)
+- Commented on `1bfedc77…` (comment `3c6edc77-7df2-812b-82f7-001d78fc854f`) — no status change; content migration is not what that task is blocked on
+
+### Improvements & fixes
+- **[done now]** `CLAUDE.md` — added a "Content migration debris" section with the two detection greps and the two non-obvious parsing facts (blank lines break link text; some `<iframe>`s live inside `document.write` strings)
+- **[skipped]** Filing the Chrome-extension `Tab not found for session ID` bug as a Notion task — Tim declined
+
 ### Technical Notes
 - **The reported "broken embed" was never an embed.** The image in the screenshot is a static screenshot of the YouTube player (player chrome and `0:00 / 7:15` baked into the .webp), used as a clickable thumbnail linking to youtu.be. Worth remembering before chasing iframe/CSP theories on similar reports.
 - **Root pattern:** Webflow's markdown export emitted linked images as `[`, blank line, `![](img)`, blank line, `](url)`. CommonMark does not allow blank lines inside link text, so it renders as three paragraphs. Detection: `grep -rn "^\[$" src/content/`.

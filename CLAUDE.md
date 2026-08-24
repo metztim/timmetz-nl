@@ -62,6 +62,19 @@ public/
 | Add media entry | Create `src/content/media/{slug}.md`                            |
 | Deploy          | Commit + push to main → auto-build on Cloudflare Pages          |
 
+## Content migration debris
+
+Most posts in `src/content/writing/` were exported from Webflow, and the export left artifacts that render as visible junk. When a post looks wrong, check these before anything else:
+
+```bash
+grep -rn "^\[$" src/content/                        # linked images broken by blank lines inside the link text
+grep -rn "document.write\|createElement" src/content/  # embed scripts dumped as body text
+```
+
+A linked image must sit on one line — `[![alt](img)](url)`. Markdown does not allow blank lines inside link text, so the split form renders as three paragraphs: a literal `[`, the image, and a literal `](url)`.
+
+Not every `<iframe>` in the content is a real element; some live inside a `document.write('...')` string and render as text. Grep for the script call, not the tag.
+
 ## Design system
 
 * **Fonts:** Inter (variable, self-hosted), JetBrains Mono (self-hosted)
