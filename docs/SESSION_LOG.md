@@ -2,6 +2,61 @@
 
 ---
 
+## Session Log: 2026-08-24 - webflow-migration-artifact-fixes
+
+**Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
+**Session ID**: f67a63c1-0149-4562-93bd-8368c50afe3f
+**Type**: [bugfix]
+
+### Objectives
+- Investigate a screenshot showing a YouTube "embed" rendering with literal `[` and `](url)` brackets around it.
+- Fix that and any related rendering breakage left over from the Webflow → Astro content migration.
+
+### Summary
+Traced the reported bug to markdown link syntax, not embeds: the Webflow export wrote linked images with blank lines inside the link text, which markdown parses as three separate paragraphs. Swept the whole `writing` collection and found two further classes of migration debris — raw Webflow embed JavaScript printed as body text in 5 posts, and video iframes with no dimensions or CSS rendering at the browser default 300×150. All three fixed, committed as `e3145be`, pushed to `origin/main` (auto-deploys via Cloudflare Pages).
+
+### Files Changed
+- `src/styles/global.css` — new "Video embeds" section: `.prose iframe` rule (`width: 100%`, `aspect-ratio: 16/9`, `height: auto`, rounded, `margin-block: 1.75em`), inserted above the Footnotes section
+- 14 writing posts — collapsed 18 broken linked-images to single-line `[![alt](img)](url)`: `a-world-without-email-cal-newport`, `ai-powered-distractions-information-overload-find-your-focus`, `how-to-talk-to-ai-gpt-3`, `interruptions-tank-return-on-attention-tiago-forte` (×4), `manual-of-me-short-introduction` (×2), `multitasking-test`, `pomodoro-power-one-daily-tomato-goal`, `pomodoro-technique`, `pomodoro-technique-book-francesco-cirillo`, `pomodoro-technique-planning-step-by-step-guide`, `productive-in-the-real-world`, `productivity-company`, `stop-multitasking`, `why-cant-i-focus`
+- `src/content/writing/consistency.md`, `early-rising.md`, `essentialism-greg-mckeown.md`, `seven-questions-planning-day.md` — removed trailing dead newsletter-form skeleton + raw `document.write()` JS blob
+- `src/content/writing/find-your-focus-challenge-2022.md` — same JS blob removed, plus the orphaned "registration is closed, leave your email below" heading and its empty Submit form
+
+### Technical Notes
+- **The reported "broken embed" was never an embed.** The image in the screenshot is a static screenshot of the YouTube player (player chrome and `0:00 / 7:15` baked into the .webp), used as a clickable thumbnail linking to youtu.be. Worth remembering before chasing iframe/CSP theories on similar reports.
+- **Root pattern:** Webflow's markdown export emitted linked images as `[`, blank line, `![](img)`, blank line, `](url)`. CommonMark does not allow blank lines inside link text, so it renders as three paragraphs. Detection: `grep -rn "^\[$" src/content/`.
+- **The `<iframe>` in the 5 JS-blob posts was never a real element** — it lived inside a `document.write('...')` string, so it rendered as visible text, not a frame. Grep for `<iframe` alone is misleading; `grep -rn "document.write\|createElement"` is the honest check.
+- `community.saent.com` now 301s to `timmetz.nl/projects/saent`, so those embeds were dead regardless — removing them lost nothing.
+- Verification was done from built HTML in `dist/` (confirmed `.prose iframe{...}` ships in the bundled CSS and every iframe sits inside `.prose`), **not** from a rendered browser screenshot — the Chrome extension repeatedly returned `Tab not found for session ID` after connecting to "Dia - Animalz".
+
+### Next Actions
+- [ ] Visually confirm a video post (e.g. `/writing/pomodoro-technique`) once the Chrome extension is working, or by eye on the live site — the iframe sizing fix was verified in built CSS only.
+- [ ] Consider a broader migration-debris sweep of the remaining ~213 writing entries: the three classes found here were all discovered incidentally from one screenshot, which suggests more may be lurking.
+
+### Metrics
+- Files modified: 20 (19 content/CSS + session log)
+- Files created: 0
+- Lines: +32 / -183
+
+### Continuation Prompt
+Project: timmetz-nl
+Session log: docs/SESSION_LOG.md
+Section: "## Session Log: 2026-08-24 - webflow-migration-artifact-fixes" (Session ID f67a63c1-0149-4562-93bd-8368c50afe3f)
+
+Context: Fixed three classes of Webflow → Astro migration debris in the writing collection (broken linked-image markdown, raw embed JS printed as body text, unsized video iframes). Committed as `e3145be` and pushed to main.
+
+Key points:
+- All three fixes are live; the iframe sizing fix was verified from built CSS in `dist/`, not from a browser screenshot — worth an eyeball check on the live site
+- Detection greps that found the debris: `grep -rn "^\[$" src/content/` and `grep -rn "document.write\|createElement" src/content/`
+- The remaining ~213 writing entries have not been swept for similar migration artifacts
+
+Referenced paths:
+- `src/content/writing/` — the collection with the migration debris
+- `src/styles/global.css` — the new `.prose iframe` rule
+
+Read the session log section above, familiarize yourself with the context, and let me know when ready to continue.
+
+---
+
 ## Session Log: 2026-07-08 - launch-deploy-saent-migration-africa-recovery
 
 **Project**: /Users/timmetz/Developer/Projects/Personal/timmetz-nl
@@ -875,3 +930,5 @@ Built a standalone HTML homepage prototype using the `frontend-design` skill, tr
 > - `prototype/index.html` — Approved design prototype (reference for Astro translation)
 >
 > Read the session log section above, familiarize yourself with the context, and let me know when ready to continue.
+
+<!-- END_OF_SESSION_LOG -->
