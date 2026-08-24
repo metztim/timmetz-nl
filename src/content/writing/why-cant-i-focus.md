@@ -48,11 +48,7 @@ Even before Find Your Focus, many realized their phones can be a tempting source
 
 Russell—my Saent cofounder—and I have long played with this idea. Below is an image—and [here a Kickstarter pitch video](https://youtu.be/xHpxBcnkJkA)—of a product we have ready but never released: an app plus box to put your phone in when you want to focus.
 
-[
-
-![An image of Saent's mobile app and box to tame phone distractions.](/images/saent/why-cant-i-focus/61f3eca88d3c274eb00dda5d_box-image-downsized.webp)
-
-](https://youtu.be/xHpxBcnkJkA)
+[![An image of Saent's mobile app and box to tame phone distractions.](/images/saent/why-cant-i-focus/61f3eca88d3c274eb00dda5d_box-image-downsized.webp)](https://youtu.be/xHpxBcnkJkA)
 
 _Saent's mobile app and box to tame phone distractions._
 

@@ -154,6 +154,20 @@ a:hover {
 }
 
 /* ============================================
+   Video embeds
+   ============================================ */
+
+.prose iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 6px;
+  margin-block: 1.75em;
+}
+
+/* ============================================
    Footnotes (remark-gfm)
    ============================================ */
 

@@ -84,11 +84,7 @@ Stay on track towards your 🍅 goals by course-correcting throughout the day.
 
 Once you have data for more than one week, calculate a weekly average. The longer you do this, the better your average will predict how many tomatoes you can complete the next week.
 
-[
-
-![](/images/saent/pomodoro-technique-planning-step-by-step-guide/63ef373f6c52678c0d867c4d_tomatoes-table-1-.webp)
-
-](https://docs.google.com/spreadsheets/d/1aPofq2NWVunnW0Vus0IYJEviBcmgRbWO3QJOZQINUP4/edit?usp=sharing)
+[![](/images/saent/pomodoro-technique-planning-step-by-step-guide/63ef373f6c52678c0d867c4d_tomatoes-table-1-.webp)](https://docs.google.com/spreadsheets/d/1aPofq2NWVunnW0Vus0IYJEviBcmgRbWO3QJOZQINUP4/edit?usp=sharing)
 
 💡 _Use_ [_this free spreadsheet template_](https://docs.google.com/spreadsheets/d/1aPofq2NWVunnW0Vus0IYJEviBcmgRbWO3QJOZQINUP4/edit?usp=sharing) _to plan and track your tomatoes and calculate your averages._
 

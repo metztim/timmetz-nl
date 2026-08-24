@@ -12,10 +12,6 @@ As part of our _Find Your Focus_ eBook, I included a simple test that shows whet
 
 You only need two minutes, paper, and a pen. Then click the image below to start the video, and I'll guide you through the test.
 
-[
-
-![](/images/saent/multitasking-test/638e071f754882512b913ec5_Multitasking-test.webp)
-
-](https://youtu.be/Xup2ePrjEbY)
+[![](/images/saent/multitasking-test/638e071f754882512b913ec5_Multitasking-test.webp)](https://youtu.be/Xup2ePrjEbY)
 
 Enjoy the test, and I'd love to hear how it went.

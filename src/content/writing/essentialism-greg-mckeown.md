@@ -65,5 +65,3 @@ These are some of our most popular articles on productivity books:
 -   [5 Tips to Read More and Forget Less](/writing/read-more-and-forget-less)
 
 _Links to the book mentioned in this article are Amazon affiliate links. When you click one and make a purchase on Amazon, we (Saent) receive a commission at no additional cost to you._
-
-const metaTag=document.createElement("meta");metaTag.name="viewport",metaTag.content="width=device-width, initial-scale=1",document.getElementsByTagName("head")\[0\].appendChild(metaTag),window.addEventListener("message",function(e){const t=document.getElementById("iframe"),n=e.data\[1\];t.style.height=n+"px"},!1),document.write('<iframe id="iframe" style="max-width:800px;border:0;box-shadow:none;outline:0;" src="https://community.saent.com/c/saent-articles/a-book-review-and-summary-of-essentialism-by-greg-mckeown?iframe=true&?post=true" scrolling="auto" width="100%"></iframe>');

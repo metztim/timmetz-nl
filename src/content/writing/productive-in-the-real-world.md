@@ -35,11 +35,7 @@ Sadly, that's what happened. July marked my return to the employed world. I took
 
 I had no clue my new role as global Marketing Director at KaiOS would be an insane 🚀 ride far beyond the scale of Saent. [Sebastien Codeville](https://www.linkedin.com/in/sebastiencodeville/) and his team of—at the time—150 people were building a mobile operating system from the ground up, competing and cooperating with giants like Google, Facebook, and many other such companies.
 
-[
-
-![](/images/saent/productive-in-the-real-world/_ovpdoAnB7HgKynpBzShwsmXUtodZULAhrmKaPv2wo2Bh7Ek9Z3IbjWpsSLNl6IqnNm8HveK9JhCzhldfrSP_mYKM2QDmnfVHSvZxfW-59DJoatP8TjA.webp)
-
-](https://www.google.com/url?q=https://www.youtube.com/watch?v%3DTXk30OqvkEE&sa=D&source=docs&ust=1652030282369021&usg=AOvVaw3dwqmr5lq4g0wzWfWH_8Zc)
+[![](/images/saent/productive-in-the-real-world/_ovpdoAnB7HgKynpBzShwsmXUtodZULAhrmKaPv2wo2Bh7Ek9Z3IbjWpsSLNl6IqnNm8HveK9JhCzhldfrSP_mYKM2QDmnfVHSvZxfW-59DJoatP8TjA.webp)](https://www.google.com/url?q=https://www.youtube.com/watch?v%3DTXk30OqvkEE&sa=D&source=docs&ust=1652030282369021&usg=AOvVaw3dwqmr5lq4g0wzWfWH_8Zc)
 
 When I joined in mid-2017, I was the first and only person tasked with marketing and branding. We had zero users but would have more than 20 million by the end of the year. By the time I left in early 2021, we were at 150+ million and more than 300 KaiOS team members.
 

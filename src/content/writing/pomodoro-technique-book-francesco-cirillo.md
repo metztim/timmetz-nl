@@ -102,11 +102,7 @@ The official Pomodoro book also includes a handy overview of the fundamental rul
 
 The Pomodoro book is worth reading if you already work in timed sessions and find that approach beneficial. The book offers a deeper understanding of the Pomodoro Technique and ideas for improving your current practice.
 
-[
-
-![Cover of the official Pomodoro Technique book by Francesco Cirillo](/images/saent/pomodoro-technique-book-francesco-cirillo/643ccd8f04460d5ae18d3cf6_Pomodoro-book.webp)
-
-](https://amzn.to/3UXPj2a)
+[![Cover of the official Pomodoro Technique book by Francesco Cirillo](/images/saent/pomodoro-technique-book-francesco-cirillo/643ccd8f04460d5ae18d3cf6_Pomodoro-book.webp)](https://amzn.to/3UXPj2a)
 
 There are sections you can skip, such as the impractical suggestions for team collaboration using the Pomodoro Technique—I've yet to meet a group of people working together that way.
 

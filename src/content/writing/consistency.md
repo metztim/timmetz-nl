@@ -79,32 +79,3 @@ Because of that change, I became more consistent in everything else I did from t
 Whichever route you take, **don’t be discouraged by failure**. None of the things on my list became habit easily or instantly: I gave up drinking a few times before it stuck, I sometimes miss a day of writing, and getting into a daily meditation habit was far from easy. But **keep coming back to it consistently, and eventually you _will_ stand firm and succeed.**
 
 _Links to the book mentioned in this article are Amazon affiliate links. When you click one and make a purchase on Amazon, we (Saent) receive a commission at no additional cost to you._
-
- 
-
- 
-
-#### Our 7,000 email subscribers got this post before we published it here.
-
- Each week, we provide expert insights on topics such as focus, work-life balance, and productivity in the age of AI.  
-  
-We cover just one subject per week, and our content will hit your inbox before it's published here on the blog. Simply subscribe below.  
-
-  
- 
-
-   Your first name: 
-
-  
-       
-
-   Your email address: 
-
-  
-       
-
- Join now  
-
-const metaTag=document.createElement("meta");metaTag.name="viewport",metaTag.content="width=device-width, initial-scale=1",document.getElementsByTagName("head")\[0\].appendChild(metaTag),window.addEventListener("message",function(e){const t=document.getElementById("iframe"),n=e.data\[1\];t.style.height=n+"px"},!1),document.write('<iframe id="iframe" style="max-width:800px;border:0;box-shadow:none;outline:0;" src="https://community.saent.com/c/saent-articles/consistency-community-link?iframe=true&?post=true" scrolling="auto" width="100%"></iframe>');
-
-‍

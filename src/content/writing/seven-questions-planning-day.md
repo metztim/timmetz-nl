@@ -95,30 +95,3 @@ If you find yourself at such a point and feel overwhelmed, pause for a few minut
 ## Off to battle!
 
 Equipped with these seven questions, you’re ready for anything. Hold them close at hand and make sure to pull them out when faced with another one of those overwhelming days; you’ll be just fine.
-
- 
-
- 
-
-#### Our 7,000 email subscribers got this post before we published it here.
-
- Each week, we provide expert insights on topics such as focus, work-life balance, and productivity in the age of AI.  
-  
-We cover just one subject per week, and our content will hit your inbox before it's published here on the blog. Simply subscribe below.  
-
-  
- 
-
-   Your first name: 
-
-  
-       
-
-   Your email address: 
-
-  
-       
-
- Join now  
-
-const metaTag=document.createElement("meta");metaTag.name="viewport",metaTag.content="width=device-width, initial-scale=1",document.getElementsByTagName("head")\[0\].appendChild(metaTag),window.addEventListener("message",function(e){const t=document.getElementById("iframe"),n=e.data\[1\];t.style.height=n+"px"},!1),document.write('<iframe id="iframe" style="max-width:800px;border:0;box-shadow:none;outline:0;" src="https://community.saent.com/c/saent-articles/are-you-asking-yourself-these-seven-questions-when-planning-your-day?iframe=true&?post=true" scrolling="auto" width="100%"></iframe>');

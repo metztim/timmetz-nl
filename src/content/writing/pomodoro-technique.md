@@ -53,11 +53,7 @@ The Pomodoro Technique has two problems: [the ramp-up period to maximum _Return 
 
 During the struggle, you figure out what you will work on or where you left off last time. It's also when you get into the right mindset to reach a state of maximum focus called [flow](/writing/flow-mihaly-csikszentmihalyi-book-review-summary).
 
-[
-
-![The struggle to get to a flow state.](/images/saent/pomodoro-technique/640ddb67695339427a7653af_RoA-struggle.webp)
-
-](/writing/interruptions-tank-return-on-attention-tiago-forte)
+[![The struggle to get to a flow state.](/images/saent/pomodoro-technique/640ddb67695339427a7653af_RoA-struggle.webp)](/writing/interruptions-tank-return-on-attention-tiago-forte)
 
 The struggle usually lasts five to fifteen minutes. Any interruption forces you to start from zero.
 

@@ -30,11 +30,7 @@ Even more distressing were problems with the software. Bugs kept popping up betw
 
 This situation showed in the Weekly Active User (WAU) numbers. While we shipped 2,000 buttons, the WAU number mostly hovered between 300 and 500.
 
-[
-
-![](/images/saent/productivity-company/UbLaXtEZXcaTtW_u1cVXcu3DC_rHovFBZIA0mkjt_ntoCimN8wZ4bLGG8qTCNrtZAca6CnPd674-3_tgulb_ilnkqEAhPEHu69u2-zf6EYAFnu4hEQqQ.webp)
-
-](https://www.google.com/url?q=https://medium.com/en-route-to-saenthood/2016-the-good-the-bad-and-the-ugly-4fe1bf4af909&sa=D&source=docs&ust=1652030282368435&usg=AOvVaw2APOiUc1-Kem_RRGkcWuZJ)
+[![](/images/saent/productivity-company/UbLaXtEZXcaTtW_u1cVXcu3DC_rHovFBZIA0mkjt_ntoCimN8wZ4bLGG8qTCNrtZAca6CnPd674-3_tgulb_ilnkqEAhPEHu69u2-zf6EYAFnu4hEQqQ.webp)](https://www.google.com/url?q=https://medium.com/en-route-to-saenthood/2016-the-good-the-bad-and-the-ugly-4fe1bf4af909&sa=D&source=docs&ust=1652030282368435&usg=AOvVaw2APOiUc1-Kem_RRGkcWuZJ)
 
 And so we finished 2016 with a solid vision and beautiful button, but also a lackluster app experience and rapidly shrinking bank account balance.
 

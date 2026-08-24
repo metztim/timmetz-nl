@@ -10,11 +10,7 @@ Author Cal Newport is best known for his book _Deep Work_, published in 2016. ([
 
 **I've heard much less about his more recent book, _A World Without Email_. His ideas in that title are as important for knowledge workers—and their managers—as those in _Deep Work_.**
 
-[
-
-![The cover of A World Without Email](/images/saent/a-world-without-email-cal-newport/63906321220aced6e979f4fc_ca784f462d8aba1578756f65fe11a7520c5d3f3642e93c46368684a85758d45f.webp)
-
-](https://amzn.to/3soIdWQ)
+[![The cover of A World Without Email](/images/saent/a-world-without-email-cal-newport/63906321220aced6e979f4fc_ca784f462d8aba1578756f65fe11a7520c5d3f3642e93c46368684a85758d45f.webp)](https://amzn.to/3soIdWQ)
 
 Here are the book's four most important takeaways. (Emphasis in **bold** mine.)
 

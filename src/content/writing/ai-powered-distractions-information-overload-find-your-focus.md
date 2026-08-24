@@ -52,11 +52,7 @@ Here are three practices from [my free book, _Find Your Focus_](https://www.saen
 
 3.  **Eliminate - Make progress by deleting.** You need to become a master [_essentialist_](/writing/essentialism-greg-mckeown) who can say “no” instead of “yes” to the influx of projects, events, and opportunities. _(Chapter 9)_
 
-[
-
-![A screenshot of the Find Your Focus landing page](/images/saent/ai-powered-distractions-information-overload-find-your-focus/64080d9ce199744a71e219d7_FYF-website-screenshot.webp)
-
-](https://www.saent.com/find-your-focus-book)
+[![A screenshot of the Find Your Focus landing page](/images/saent/ai-powered-distractions-information-overload-find-your-focus/64080d9ce199744a71e219d7_FYF-website-screenshot.webp)](https://www.saent.com/find-your-focus-book)
 
 ‍**You can read _Find Your Focus_ in less than an hour** and master ultimate concentration within 10 days—you’ll be prepared for the AI-powered distraction flood that’s coming.
 

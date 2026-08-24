@@ -117,11 +117,7 @@ To use these templates or make your own, go to [OpenAI's GPT-3 Playground](https
 
 Click the image below to watch a video where I explain these steps using the Expert Generator template as an example. 👇️
 
-[
-
-![https://userlist-production.s3.amazonaws.com/83a1e0019e7c5e28fb164c57910b2485fe0016bddfc335e44eb43903dd1047b3.jpg](/images/saent/how-to-talk-to-ai-gpt-3/63d26a37615efb0188da498c_83a1e0019e7c5e28fb164c57910b2485fe0016bddfc335e44eb43903dd1047b3.webp)
-
-](https://youtu.be/1v7XWYrQSdc)
+[![https://userlist-production.s3.amazonaws.com/83a1e0019e7c5e28fb164c57910b2485fe0016bddfc335e44eb43903dd1047b3.jpg](/images/saent/how-to-talk-to-ai-gpt-3/63d26a37615efb0188da498c_83a1e0019e7c5e28fb164c57910b2485fe0016bddfc335e44eb43903dd1047b3.webp)](https://youtu.be/1v7XWYrQSdc)
 
 I hope you're now inspired to try out these templates and create your own AI machines.
 

@@ -85,11 +85,7 @@ The **history view** makes it easy to see if and when you earned tomatoes.
 
 **Emojis and text labels** let you indicate which sessions you spent working on your goal.
 
-[
-
-![A screenshot of Lifeline with tomato rewards.](/images/saent/pomodoro-power-one-daily-tomato-goal/63dff0368d78893e372f8a43_tomato-rewards.webp)
-
-](https://apps.apple.com/app/apple-store/id1526186940?pt=118017664&ct=saent-blog&mt=8)
+[![A screenshot of Lifeline with tomato rewards.](/images/saent/pomodoro-power-one-daily-tomato-goal/63dff0368d78893e372f8a43_tomato-rewards.webp)](https://apps.apple.com/app/apple-store/id1526186940?pt=118017664&ct=saent-blog&mt=8)
 
 Lifeline also **connects with your calendar**, so you can plan your daily sessions there and start them in Lifeline.
 

@@ -12,11 +12,7 @@ I was already excited about this concept through startup founder [Jay Desai](htt
 
 Then I noticed agile coach Steven Sampson-Jones upping the stakes by sharing his visual Manual of Me [on LinkedIn](https://www.linkedin.com/posts/stevensampsonjones_%3F%3F%3F%3F%3F%3F-%3F%3F-%3F%3F-hey-im-steven-activity-6945300101535825920-bo01?utm_source=linkedin_share&utm_medium=member_desktop_web). Check it out. 👇️
 
-[
-
-![Visual Manual of Me of Steven Sampson-Jones](/images/saent/manual-of-me-short-introduction/62b417985b1d8fca2908d57e_image-20-2829-29.webp)
-
-](https://www.linkedin.com/posts/stevensampsonjones_%3F%3F%3F%3F%3F%3F-%3F%3F-%3F%3F-hey-im-steven-activity-6945300101535825920-bo01?utm_source=linkedin_share&utm_medium=member_desktop_web)
+[![Visual Manual of Me of Steven Sampson-Jones](/images/saent/manual-of-me-short-introduction/62b417985b1d8fca2908d57e_image-20-2829-29.webp)](https://www.linkedin.com/posts/stevensampsonjones_%3F%3F%3F%3F%3F%3F-%3F%3F-%3F%3F-hey-im-steven-activity-6945300101535825920-bo01?utm_source=linkedin_share&utm_medium=member_desktop_web)
 
 _Source:_ [_Steven Sampson-Jones on LinkedIn_](https://www.linkedin.com/posts/stevensampsonjones_%3F%3F%3F%3F%3F%3F-%3F%3F-%3F%3F-hey-im-steven-activity-6945300101535825920-bo01?utm_source=linkedin_share&utm_medium=member_desktop_web)
 
@@ -30,11 +26,7 @@ Besides these previous examples from Jay and Steven, there are more handy resour
 
 ‍
 
-[
-
-![Manual of Me for Cassie Robinson](/images/saent/manual-of-me-short-introduction/62b4179853e51076bbbfec06_image-20-2830-29.webp)
-
-](https://cassierobinson.medium.com/a-user-manual-for-me-d3a851fbc694)
+[![Manual of Me for Cassie Robinson](/images/saent/manual-of-me-short-introduction/62b4179853e51076bbbfec06_image-20-2830-29.webp)](https://cassierobinson.medium.com/a-user-manual-for-me-d3a851fbc694)
 
 _Source:_ [_Cassie Robinson on Medium_](https://cassierobinson.medium.com/a-user-manual-for-me-d3a851fbc694)
 

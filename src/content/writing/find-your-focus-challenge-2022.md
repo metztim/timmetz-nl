@@ -22,12 +22,6 @@ Cal Newport, the author who coined the term "[deep work](/writing/deep-work-cal-
 
 Find Your Focus leads you to a higher _return on attention_ through ten short chapters of two pages each. You'll learn how to **destroy distractions, single-task, prioritize, and recharge** through tips you can apply to your daily workflow immediately, without much effort.
 
-##### Registration for our first challenge of 2022 is now closed. Leave your email address below if you'd like to know when registration for similar challenges opens in the future.
-
-  
-
-    Submit
-
 ## **The Find Your Focus Challenge**
 
 The challenge complements each step of the eBook—one day for each chapter. It **starts on Monday, January 10th**, and includes:
@@ -39,5 +33,3 @@ The challenge complements each step of the eBook—one day for each chapter. It 
 By the end, **you'll have a lasting habit of focus**, along with a network of peers and supporters.
 
 To join the challenge, head over to [community.saent.com](https://community.saent.com/c/find-your-focus-challenge-1/), use your email to register as a member, and join the _Find Your Focus_ space from the left menu.
-
-const metaTag=document.createElement("meta");metaTag.name="viewport",metaTag.content="width=device-width, initial-scale=1",document.getElementsByTagName("head")\[0\].appendChild(metaTag),window.addEventListener("message",function(e){const t=document.getElementById("iframe"),n=e.data\[1\];t.style.height=n+"px"},!1),document.write('<iframe id="iframe" style="max-width:800px;border:0;box-shadow:none;outline:0;" src="https://community.saent.com/c/saent-articles/join-the-find-your-focus-challenge-2022?iframe=true&?post=true" scrolling="auto" width="100%"></iframe>');

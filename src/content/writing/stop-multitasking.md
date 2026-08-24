@@ -12,11 +12,7 @@ I had just started a video production company. With it came people to manage, bu
 
 I felt overwhelmed, but I remember thinking that other folks deal with much larger responsibilities and workloads. There must be a better way to handle this.
 
-[
-
-![Getting Things Done book cover](/images/saent/stop-multitasking/mIFG3bf2SEmg5GIxy_bfbyaU0zmT91XbwGgaHm9OAdYAkbJxfBjFZVfvJWOUhQAlgIgTCominEJVjidt2L2zvF0bvvIUZZTCOFlHexfOku39-jmPa5g.webp)
-
-](https://amzn.to/3p5SDbW)
+[![Getting Things Done book cover](/images/saent/stop-multitasking/mIFG3bf2SEmg5GIxy_bfbyaU0zmT91XbwGgaHm9OAdYAkbJxfBjFZVfvJWOUhQAlgIgTCominEJVjidt2L2zvF0bvvIUZZTCOFlHexfOku39-jmPa5g.webp)](https://amzn.to/3p5SDbW)
 
 Around this time, I stumbled upon _Getting Things Done_ (GTD) in a bookshop in Krakow in Poland, where I was visiting a friend. The title appealed to me. The corporate guy on the cover didn't. I picked up the book nevertheless, and the first chapter described my predicament:
 
