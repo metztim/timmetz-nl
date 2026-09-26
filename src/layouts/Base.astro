@@ -23,7 +23,7 @@ const currentPath = Astro.url.pathname;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="alternate" type="application/rss+xml" title="Tim Metz — Writing" href="/rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Tim Metz: Writing" href="/rss.xml" />
   <SEOHead title={title} description={description} ogImage={ogImage} ogType={ogType} jsonLd={jsonLd} />
   <script is:inline>
     (function() {
@@ -35,10 +35,11 @@ const currentPath = Astro.url.pathname;
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <MobileNav currentPath={currentPath} />
   <div class="layout">
     <Sidebar currentPath={currentPath} />
-    <main class="main">
+    <main class="main" id="main-content" tabindex="-1">
       <slot />
     </main>
   </div>
@@ -54,6 +55,7 @@ const currentPath = Astro.url.pathname;
 
   .main {
     flex: 1;
+    min-width: 0;
     max-width: 640px;
     padding: 2.5rem 2rem 4rem;
   }

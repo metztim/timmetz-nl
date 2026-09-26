@@ -32,8 +32,7 @@ const grouped = statusOrder
       <ul class="project-list">
         {group.projects.map(project => (
           <li>
-            <a href={`/projects/${project.id}`} class="project-name">{project.data.title}</a>
-            <span class="project-desc"> &mdash; {project.data.description}</span>
+            <a href={`/projects/${project.id}`} class="project-name">{project.data.title}</a><span class="project-desc">: {project.data.description}</span>
           </li>
         ))}
       </ul>

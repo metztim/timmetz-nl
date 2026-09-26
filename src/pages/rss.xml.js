@@ -7,7 +7,7 @@ export async function GET(context) {
   );
 
   return rss({
-    title: 'Tim Metz — Writing',
+    title: 'Tim Metz: Writing',
     description:
       'Writing by Tim Metz on productivity, AI, and building software.',
     site: context.site,

@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import remarkGfm from 'remark-gfm';
 
 export default defineConfig({
-  site: 'https://timmetz.nl',
+  site: 'https://www.timmetz.nl',
   integrations: [sitemap()],
   vite: { plugins: [tailwindcss()] },
   markdown: {

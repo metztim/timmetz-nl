@@ -1,6 +1,6 @@
 ---
 title: "Sentinel"
-description: "Always-on Claude agent that flags genuinely urgent email"
+description: "Background agent that checks email for urgent messages"
 status: active
 role: "Creator"
 startDate: 2026-05-01
@@ -10,6 +10,6 @@ featured: true
 sortOrder: 4
 ---
 
-Sentinel is an urgent-flag for your inbox: an always-on background agent, powered by Claude Code, that scans email (and optionally Slack) every 15 minutes, asks Claude whether anything genuinely cannot wait, and pushes only those items to your phone. You keep the inbox closed and trust that real urgency surfaces itself.
+Sentinel is a background agent powered by Claude Code that checks email and, optionally, Slack every 15 minutes. It uses Claude to assess which messages are urgent and sends those to your phone as push notifications.
 
-It lives in [claude-agents](https://github.com/metztim/claude-agents), a small open-source home for always-on Claude agents with a shared ops layer for running and tuning them. New agents drop in beside Sentinel and inherit that layer for free.
+It lives in [claude-agents](https://github.com/metztim/claude-agents), a small open-source home for always-on Claude agents with a shared ops layer for running and tuning them. Other agents can use the same tools for running and tuning them.

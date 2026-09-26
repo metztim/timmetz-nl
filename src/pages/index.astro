@@ -34,11 +34,11 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Tim Metz",
-  url: "https://timmetz.nl",
+  url: "https://www.timmetz.nl/",
   jobTitle: "Director of Marketing & Innovation",
   worksFor: { "@type": "Organization", name: "Animalz" },
   description:
-    "Tim Metz builds things at the intersection of productivity, AI, and content. Marketing and AI innovation lead at Animalz, maker of Lifeline, and author of We Eat Robots.",
+    "Tim Metz leads marketing and AI innovation at Animalz, makes Lifeline, and writes We Eat Robots.",
   knowsAbout: ["Artificial Intelligence", "Productivity", "Content Marketing", "Software Development"],
   sameAs: [
     "https://www.linkedin.com/in/metztim",
@@ -51,10 +51,10 @@ const personSchema = {
 ---
 
 <Base jsonLd={personSchema}>
+  <h1 class="sr-only">Tim Metz</h1>
   <p class="intro">
-    I build things at the intersection of productivity, AI, and content.
-    Currently leading marketing and AI innovation at <a href="/about">Animalz</a>,
-    building <a href="/projects/lifeline">Lifeline</a>, and writing
+    I lead marketing and AI innovation at <a href="/about">Animalz</a>,
+    build <a href="/projects/lifeline">Lifeline</a>, and write
     <a href="/projects/we-eat-robots">We Eat Robots</a>.
   </p>
 
@@ -63,8 +63,7 @@ const personSchema = {
     <ul class="project-list">
       {projects.map(project => (
         <li>
-          <a href={`/projects/${project.id}`} class="project-name">{project.data.title}</a>
-          <span class="project-desc"> &mdash; {project.data.description}</span>
+          <a href={`/projects/${project.id}`} class="project-name">{project.data.title}</a><span class="project-desc">: {project.data.description}</span>
         </li>
       ))}
     </ul>
@@ -103,8 +102,7 @@ const personSchema = {
     <ul class="work-list">
       {work.map(entry => (
         <li>
-          <span class="work-company">{entry.data.company}</span>
-          <span> &mdash; {entry.data.title} </span>
+          <span class="work-company">{entry.data.company}</span><span>: {entry.data.title} </span>
           <span class="work-dates">
             ({formatYear(entry.data.startDate)}&ndash;{entry.data.endDate ? formatYear(entry.data.endDate) : "present"})
           </span>

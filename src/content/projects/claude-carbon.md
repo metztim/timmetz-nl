@@ -1,6 +1,6 @@
 ---
 title: "Claude Carbon"
-description: "macOS menu bar app tracking the energy and carbon footprint of Claude Code sessions"
+description: "macOS menu bar app estimating the energy and carbon footprint of Claude Code sessions"
 status: active
 role: "Creator"
 startDate: 2025-12-01

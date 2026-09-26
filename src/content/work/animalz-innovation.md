@@ -1,7 +1,7 @@
 ---
 title: "Director of Marketing & Innovation"
 company: "Animalz"
-description: "Leading marketing and AI innovation at a top B2B content marketing agency."
+description: "Leading marketing and AI innovation at a B2B content marketing agency."
 startDate: 2024-01-01
 location: "Remote (Koh Samui, Thailand)"
 highlights:

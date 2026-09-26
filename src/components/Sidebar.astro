@@ -10,7 +10,6 @@ const { currentPath = "" } = Astro.props;
 const navItems = [
   { href: "/projects", label: "Projects" },
   { href: "/writing", label: "Writing" },
-  { href: "/workflows", label: "Workflows" },
   { href: "/about", label: "About" },
 ];
 
@@ -30,9 +29,9 @@ function isActive(href: string): boolean {
   <div class="sidebar-inner">
     <div class="sidebar-top">
       <a href="/" class="site-name">Tim Metz</a>
-      <nav class="sidebar-nav">
+      <nav aria-label="Main navigation" class="sidebar-nav">
         {navItems.map(item => (
-          <a href={item.href} class:list={[{ active: isActive(item.href) }]}>
+          <a href={item.href} class:list={[{ active: isActive(item.href) }]} aria-current={isActive(item.href) ? "page" : undefined}>
             {item.label}
           </a>
         ))}
