@@ -1,6 +1,6 @@
 ---
 source_of_truth: /Users/timmetz/Developer/Projects/Personal/timmetz-nl/docs/copy-review-2026-09-26.md
-note: Review record. Selected edits applied locally on 2026-09-26; current copy lives in src/.
+note: Review record. Selected edits deployed on 2026-09-26 in a5bc553; current copy lives in src/.
 ---
 
 # Website Copy Review
@@ -254,4 +254,4 @@ Use a colon or other punctuation instead of the rendered em dash separators in h
 
 ## Applied edits
 
-Applied locally: About opening, career transition, and site description; MyScreen recording and sharing; Animalz project and role descriptions; Sentinel behavior; We Eat Robots introduction; Lifeline history; aligned metadata; Claude Carbon estimate wording. Homepage uses the shorter proposed alternative. Sentinel infrastructure retains only the functions already in its source. Article files remain unchanged.
+Applied and deployed: About opening, career transition, and site description; MyScreen recording and sharing; Animalz project and role descriptions; Sentinel behavior; We Eat Robots introduction; Lifeline history; aligned metadata; Claude Carbon estimate wording. Homepage uses the shorter proposed alternative. Sentinel infrastructure retains only the functions already in its source. Article files remain unchanged.

@@ -1,11 +1,11 @@
 ---
 source_of_truth: /Users/timmetz/Developer/Projects/Personal/timmetz-nl/docs/site-review-2026-09-26.md
-note: Local implementation and verification record. Production deployment is pending.
+note: Implementation and live verification record. Code deployed as a5bc553 on 2026-09-26.
 ---
 
 # Website Review and Priorities
 
-Reviewed the live site at https://www.timmetz.nl and the local Astro source on 2026-09-26. Changes below are implemented locally and browser-checked. The live site has not been updated. Article source files are unchanged.
+Reviewed the live site at https://www.timmetz.nl and the local Astro source on 2026-09-26. Changes below are deployed and browser-checked. Production code commit: `a5bc553`; Cloudflare deployment: `ccd94125-6bec-44a5-bc3f-5f2544e1cf20`. Article source files are unchanged.
 
 ## Implemented, highest impact first
 
@@ -19,7 +19,7 @@ Reviewed the live site at https://www.timmetz.nl and the local Astro source on 2
 | Medium | Small muted text has weak contrast. | Darken light-mode secondary metadata and lighten dark-mode metadata; add keyboard focus indicators and a skip link. |
 | Medium | Writing detail route generation includes drafts even though listings and RSS exclude them. | Exclude draft detail routes too. No existing drafts were found. |
 | Low | Canonical URLs and sitemap use the bare domain while live navigation ends at www. | Align canonical origin, RSS, robots, and structured profile URL with www. |
-| Low | Missing legacy internal route and no useful 404 page. | Add an exact Cloudflare redirect for `/get-more-done-by-taking-your-time/`; add a 404 page linking to the archive, projects, and home. Redirect takes effect only on Cloudflare deployment. |
+| Low | Missing legacy internal route and no useful 404 page. | Add an exact Cloudflare redirect for `/get-more-done-by-taking-your-time/`; add a 404 page linking to the archive, projects, and home. The redirect was verified on the live site. |
 | Low | Saent project offers a Visit link to the retired site and names a history series without linking it. | Remove the retired-site link and link the existing series introduction. |
 
 ## Migration audit
@@ -44,7 +44,7 @@ The personal Timmetz.nl project has 13 linked tasks: four Done and nine open. Th
 | Order | Open task | Disposition |
 | --- | --- | --- |
 | 1 | Sweep remaining writing entries for Webflow migration artifacts | Audit completed; findings above. Keep open for targeted cleanup and destination recovery. |
-| 2 | Strengthen personal online presence so LLMs cite me | Site copy, navigation, canonical URLs, and discoverability improved locally. External bios, X, and automatic updates remain outside this pass. |
+| 2 | Strengthen personal online presence so LLMs cite me | Site copy, navigation, canonical URLs, and discoverability improved and deployed. External bios, X, and automatic updates remain outside this pass. |
 | 3 | Repoint SaentLifeline release-post publishing | Bounded follow-up, but changes another repository's publishing process. Review that process separately. |
 | 4 | Interlink external bios | Requires edits on LinkedIn, Animalz, and We Eat Robots. Prepare exact changes before publishing externally. |
 | 5 | Create a design system with Claude Design | Deferred. This pass preserves the current design; a redesign and reusable design system need a separate brief. |
@@ -56,11 +56,13 @@ The personal Timmetz.nl project has 13 linked tasks: four Done and nine open. Th
 
 ## Analytics
 
-No Google Analytics or Cloudflare Web Analytics script was found in the inspected live pages or source. Cloudflare's dashboard requires sign-in in the in-app browser.
+Before this work, no Google Analytics or Cloudflare Web Analytics script was found on the inspected live pages. Cloudflare Web Analytics is now enabled for the timmetz-nl Pages project; Google Analytics was not added.
 
-Cloudflare Web Analytics is the recommended first step for basic audience and performance statistics. Enable it under Workers & Pages → timmetz-nl → Metrics → Web Analytics, then deploy and confirm the beacon appears on the live site. Setup is not yet complete. Official guide: https://developers.cloudflare.com/pages/how-to/web-analytics/.
+Enabled under Workers & Pages → timmetz-nl → Metrics → Web Analytics, then deployed. Verified `https://static.cloudflareinsights.com/beacon.min.js` on the live Writing page. The dashboard starts without historical data and fills as visits arrive. Official guide: https://developers.cloudflare.com/pages/how-to/web-analytics/.
 
 ## Verification
+
+Live smoke checks passed for Writing search/reset, desktop theme, www canonical URL, analytics beacon, and the known legacy redirect.
 
 - Production build passes. Existing warnings concern empty media, workflows, and posts collections.
 - Browser: title/topic search, publication filter, combined zero-result state, clear/reset, empty year-group hiding, and desktop/mobile theme switches checked.
