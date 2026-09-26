@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/timmetz/Developer/Projects/Personal/timmetz-nl/logs/.61df164e7efb1f5ab0ff3d8a47a2afa9b383660c-audit.json",
+    "files": [
+        {
+            "date": 1790409709450,
+            "name": "/Users/timmetz/Developer/Projects/Personal/timmetz-nl/logs/mcp-puppeteer-2026-09-26.log",
+            "hash": "049bb4d7edf1a93d758919532a3a84363e858bed1d3c7c5940bda144c93eacbd"
+        }
+    ],
+    "hashType": "sha256"
+}
