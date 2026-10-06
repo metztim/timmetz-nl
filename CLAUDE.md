@@ -54,7 +54,7 @@ public/
 
 ## Content operations
 
-| Operation       | <span data-proof="authored" data-by="ai:claude">Action</span>   |
+| Operation       | Action                                                          |
 | --------------- | --------------------------------------------------------------- |
 | Add project     | Create `src/content/projects/{slug}.md` with schema frontmatter |
 | Add writing     | Create `src/content/writing/{slug}.md` with schema frontmatter  |
@@ -104,35 +104,3 @@ npm run preview    # Preview production build
 ## People
 
 * **Tim Metz** — Site owner, product manager. Non-technical; reviews output in browser.
-
-<!-- PROOF
-{
-  "version": 2,
-  "marks": {
-    "m1771403492076_3": {
-      "kind": "replace",
-      "by": "ai:claude",
-      "createdAt": "2026-02-18T08:31:32.076Z",
-      "range": {
-        "from": 1182,
-        "to": 1310
-      },
-      "content": "│   ├── writing/\n│   │   ├── index.astro        # Writing listing (year-grouped)\n│   │   └── [...slug].astro    # Writing detail\n│   └── workflows/\n│       ├── index.astro        # Workflows listing (grouped by type)\n│       └── [...slug].astro    # Workflow/command detail",
-      "status": "pending"
-    },
-    "m1771403492073_2": {
-      "kind": "insert",
-      "by": "ai:claude",
-      "createdAt": "2026-02-18T08:32:39.405Z",
-      "range": {
-        "from": 2138,
-        "to": 2280
-      },
-      "content": "\nAdd workflow\nCreate src/content/workflows/{slug}.md with type: workflow\nAdd command\nCreate src/content/workflows/{slug}.md with type: command",
-      "status": "pending"
-    }
-  }
-}
--->
-
-<!-- PROOF:END -->
