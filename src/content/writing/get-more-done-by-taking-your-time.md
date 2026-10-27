@@ -4,6 +4,7 @@ description: "\"Having a lot to do isn’t the same as actually getting a lot do
 pubDate: 2014-12-03
 sourceName: "Saent"
 tags: ["saent","decision-making-email-essentialism-evernote-planning-prioritising-saying-no-time-management-work-rhythm"]
+mediumUrl: "https://medium.com/@timmetz/get-more-done-by-taking-your-time-d42117d503ae"
 ---
 
 > _Having a lot to do isn’t the same as actually getting a lot done. Most of the time, people who have a lot to do end up doing a lot of unimportant, unnecessary things.”_\-Leo Babauta, _"_[_The Power of Less_](http://thepowerofless.com/)"

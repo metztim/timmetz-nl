@@ -4,6 +4,7 @@ description: "What have you changed about yourself in the past 12 months? It’s
 pubDate: 2014-12-31
 sourceName: "Saent"
 tags: ["saent","change-essentialism-health-kaizen-lifestyle-management-mindset-motivation-reading-self-improvement"]
+mediumUrl: "https://medium.com/@timmetz/annual-kaizen-review-my-self-improvement-in-2014-e66da3f7a754"
 ---
 
 _What have you changed about yourself in the past 12 months?_ It’s one of my favorite questions when doing job interviews. It tells you quite a few things about the candidate:

@@ -4,6 +4,7 @@ description: "When everything becomes a priority, nothing is a priority. In fact
 pubDate: 2014-12-19
 sourceName: "Saent"
 tags: ["saent","decision-making-focus-prioritising-saying-no"]
+mediumUrl: "https://medium.com/@timmetz/getting-your-priorities-right-is-hard-heres-the-real-reason-c0f60d994603"
 ---
 
 When everything becomes a priority, nothing is a priority. In fact, until around 1950, people hardly ever used the plural “priorities”. They seemed content to only have one “priority”\*. No wonder we struggle with having three, five or even ten of them. **Prioritizing is about making choices.** Am I going to spend more time with my family, or write a book in my evening hours? Will I go to bed early, or hit the club with friends? It’s therefore also about saying no. If you make one thing a priority, you will have to [say no to all the other things](http://saentproductivity.com/art-saying-minimizing-commitments/). You therefore also need to know what’s important to you, and be decisive.

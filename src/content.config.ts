@@ -32,6 +32,7 @@ const writing = defineCollection({
     draft: z.boolean().default(false),
     originalUrl: z.string().url().optional(),
     sourceName: z.string().optional(),
+    mediumUrl: z.string().url().optional(),
     excerpt: z.string().optional(),
     lang: z.string().optional(),
   }),

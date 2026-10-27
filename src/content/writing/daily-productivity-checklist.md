@@ -4,6 +4,7 @@ description: "A productivity checklist helps plan your day, so you don't forget 
 pubDate: 2017-03-30
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/@timmetz/checklists-for-your-daily-routine-productivity-tip-61bccc318d3e"
 ---
 
 Since finishing ["The Checklist Manifesto](http://amzn.to/2iraKVv)," I've been experimenting with a productivity checklist to manage my daily routine. External factors like a boss or office don't define my days as [I work remotely](https://www.saent.com/2017/01/09/remote-work-why/); a daily checklist helps me create structure and realistic plans.

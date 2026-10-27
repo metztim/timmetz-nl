@@ -4,6 +4,7 @@ description: "In Thrive, Arianna Huffington makes an impassioned and compelling 
 pubDate: 2021-08-29
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/just-finished/thrive-e1f72470c487"
 ---
 
 It’s easy to define this book as a hypocritical work from a multi-millionaire business woman. Having made her own fortune, she now tells the rest of us to work less, give more, and not to worry about money as it doesn’t bring happiness. But no, that’s too easy, let’s give Arianna Huffington the benefit of the doubt on that one.

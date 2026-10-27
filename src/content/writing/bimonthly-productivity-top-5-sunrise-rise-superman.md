@@ -4,6 +4,7 @@ description: "In the Bimonthly Productivity Top 5, I look back at the most impor
 pubDate: 2015-03-05
 sourceName: "Saent"
 tags: ["saent","books-change-kaizen-productivity-time-management-tools-tricks"]
+mediumUrl: "https://medium.com/@timmetz/bimonthly-productivity-top-5-sunrise-and-the-rise-of-superman-100a8241392e"
 ---
 
 In the Bimonthly Productivity Top 5, I look back at the most important productivity hacks I’ve implemented in the past two months. This one covers January and February of 2015.

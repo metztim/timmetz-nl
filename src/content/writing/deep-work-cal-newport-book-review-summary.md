@@ -4,6 +4,7 @@ description: "for anyone who has problems focussing on their work or getting the
 pubDate: 2021-08-16
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/just-finished/deep-work-33db8bf14cdd"
 ---
 
 _Rules for Focused Success in a Distracted World_

@@ -4,6 +4,7 @@ description: "One Ring to rule them all, One Ring to find them, One Ring to brin
 pubDate: 2014-12-26
 sourceName: "Saent"
 tags: ["saent","eat-the-frog-energy-essentialism-goals-habits-keystone-habit-prioritising-tricks"]
+mediumUrl: "https://medium.com/@timmetz/the-one-habit-to-rule-them-all-eat-the-frog-fa7a847bbb01"
 ---
 
 > _One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them."_\- J.R.R. Tolkien, The Lord of the Rings

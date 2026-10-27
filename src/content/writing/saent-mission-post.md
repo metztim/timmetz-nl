@@ -4,6 +4,7 @@ description: "We're about to overhaul the user experience (UX) of our app Lifeli
 pubDate: 2022-02-23
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/en-route-to-saenthood/saents-mission-and-lifeline-s-ux-overhaul-what-do-you-think-c28a2bece764"
 ---
 
 We're embarking on a critical new phase for Saent, and I'll involve you at every step by sharing regular updates here on the blog and in the [Saent community](https://community.saent.com).

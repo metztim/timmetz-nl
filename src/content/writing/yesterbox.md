@@ -4,6 +4,7 @@ description: "The Yesterbox concept is straightforward: instead of trying to kee
 pubDate: 2022-05-25
 sourceName: "Saent"
 tags: ["saent","email"]
+mediumUrl: "https://medium.com/@timmetz/use-yesterbox-to-ace-your-email-productivity-tip-e900e6631336"
 ---
 
 Yesterbox is an email technique from the late Zappos CEO Tony Hsieh. The concept is straightforward: instead of trying to keep up with every new email that lands in your inbox _today_, your goal is to clear out mail from _yesterday_.

@@ -4,6 +4,7 @@ description: "You’ve probably heard this time-management advice before: don’
 pubDate: 2015-03-03
 sourceName: "Saent"
 tags: ["saent","planning-pomodoro-technique-prioritising-time-management-tricks"]
+mediumUrl: "https://medium.com/@timmetz/simply-use-your-calendar-and-turbocharge-your-day-75ecf2831892"
 ---
 
 You’ve probably heard this time-management advice before: don’t just use your calendar for meetings with other people. Also schedule appointments with yourself and treat them as holy. If you’re like me, that trick somehow never seems to work. It sounds nice on paper. But when there’s an urgent request from your boss or client coming in, which is the easiest meeting to cancel? The one with yourself.

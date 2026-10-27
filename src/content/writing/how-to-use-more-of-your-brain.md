@@ -4,6 +4,7 @@ description: "A blacksmith is useless without his hammer. The factory is nothing
 pubDate: 2015-02-14
 sourceName: "Saent"
 tags: ["saent","brain-decision-making-mindfulness-mindset-self-improvement-thinking"]
+mediumUrl: "https://medium.com/@timmetz/how-to-use-more-of-your-brain-de7a66ab42d8"
 ---
 
 _A blacksmith is useless without his hammer. The factory is nothing without a conveyor belt. A jockey gets nowhere without his horse. Jimi Hendrix is lost without a guitar. What is thunder without lightning..._ OK, that last one was a joke. This is not the start of a new love song I'm writing. Craftsmen and their tools, that's the point. Without those, they would be nowhere. But crafts have changed and so has our equipment. We've moved to offices and are spending our days in front of screens. The computer is the main new tool we're using, making our brain the shining star. Brain is to computer what the blacksmith's dexterity is to his hammer. Without mastery of the hands, the hammer is useless. Without our brains, the computer will do very little (at least [for now...](http://singularityhub.com/2015/01/26/ray-kurzweils-mind-boggling-predictions-for-the-next-25-years/)).

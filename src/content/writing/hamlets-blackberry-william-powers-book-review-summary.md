@@ -4,6 +4,7 @@ description: "if you’ve ever felt technology (especially the internet) is gett
 pubDate: 2021-08-21
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/just-finished/hamlet-s-blackberry-432c28c7d456"
 ---
 
 _Building a Good Life in the Digital Age_

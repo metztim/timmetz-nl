@@ -3,6 +3,7 @@ title: "Why Not Busy is the New Black"
 pubDate: 2014-10-24
 sourceName: "Saent"
 tags: ["saent","lifestyle-time-management-trends"]
+mediumUrl: "https://medium.com/@timmetz/234e936c721e"
 ---
 
 > “If a frog is placed in boiling water, it will jump out, but if it is placed in cold water that is slowly heated, it will not perceive the danger and will be cooked to death.”\*

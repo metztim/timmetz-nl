@@ -4,6 +4,7 @@ description: "We take work wherever we live and life to where we work. Checking 
 pubDate: 2019-12-31
 sourceName: "Saent"
 tags: ["saent","balance-big-tech-culture-data-metrics-tools"]
+mediumUrl: "https://medium.com/@timmetz/living-with-work-life-integration-62ecaa96b6ec"
 ---
 
 If you use computers and phones to get things done, you will have noticed the blurring line between work and life. We take work wherever we live and life to where we work. Checking email on vacation has become as common as browsing through Facebook while you’re on the boss’s clock. Whether you like it or not, we're living in a world of _work-life integration_.

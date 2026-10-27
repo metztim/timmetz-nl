@@ -4,6 +4,7 @@ description: "I'll walk you through my personal productivity journey and the his
 pubDate: 2022-04-30
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/en-route-to-saenthood/my-personal-productivity-journey-and-the-history-of-saent-da568b3b74ec"
 ---
 
 [_Gail Marie_](https://www.gmariellc.com/)_, former Director of Quality at Animalz, invited Saent cofounder Tim to give a presentation to her fantastic team of editors about his personal productivity journey. That request inspired him to turn his slides into a nine-part article series:_

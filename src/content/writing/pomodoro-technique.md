@@ -4,6 +4,7 @@ description: "The Pomodoro Technique is so simple you can start using it by the 
 pubDate: 2023-03-12
 sourceName: "Saent"
 tags: ["saent","distraction-energy-focus-pomodoro-technique-time-management-timeboxing-tools-tricks-work-rhythm"]
+mediumUrl: "https://medium.com/@timmetz/pomodoro-technique-and-other-work-rhythms-which-one-suits-you-34c2d05fe46e"
 ---
 
 Most productivity hacks require time to learn and use. That’s a problem—you’re looking for such solutions because you’re too busy already. The result? Most of us give up on learning new tricks and revert to our old ways.

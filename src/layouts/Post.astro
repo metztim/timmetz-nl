@@ -6,9 +6,10 @@ interface Props {
   description: string;
   pubDate: Date;
   updatedDate?: Date;
+  mediumUrl?: string;
 }
 
-const { title, description, pubDate, updatedDate } = Astro.props;
+const { title, description, pubDate, updatedDate, mediumUrl } = Astro.props;
 
 function formatDate(date: Date): string {
   const m = String(date.getMonth() + 1).padStart(2, "0");
@@ -33,6 +34,11 @@ function formatDate(date: Date): string {
     <div class="prose">
       <slot />
     </div>
+    {mediumUrl && (
+      <footer class="post-source">
+        <a href={mediumUrl} target="_blank" rel="noopener noreferrer">Read on Medium</a>
+      </footer>
+    )}
   </article>
 </Base>
 
@@ -56,5 +62,11 @@ function formatDate(date: Date): string {
 
   .updated {
     color: var(--color-text-muted);
+  }
+
+  .post-source {
+    margin-top: 2rem;
+    font-size: 14px;
+    color: var(--color-text-secondary);
   }
 </style>

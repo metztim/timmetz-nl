@@ -4,6 +4,7 @@ description: "While not an easy read, this is an invaluable and timeless guide o
 pubDate: 2021-08-29
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/just-finished/letters-from-a-stoic-book-summary-4f9cf20d80b6"
 ---
 
 _Epistulae morales ad Lucilium (“moral letters to Lucilius”)_

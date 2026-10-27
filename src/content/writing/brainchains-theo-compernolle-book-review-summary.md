@@ -4,6 +4,7 @@ description: "World-class collection of research on what technology is doing to 
 pubDate: 2021-08-28
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/just-finished/brainchains-book-review-224fc99ee015"
 ---
 
 _Discover your brain, to unleash its full potential in a hyperconnected, multitasking world_

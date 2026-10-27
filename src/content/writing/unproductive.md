@@ -4,6 +4,7 @@ description: "For most of us, the challenge is to get more productive. But there
 pubDate: 2015-04-24
 sourceName: "Saent"
 tags: ["saent","change-distraction-habits-prioritising-productivity-self-improvement-tricks"]
+mediumUrl: "https://medium.com/@timmetz/how-to-be-as-unproductive-as-possible-aa0f96c89fc6"
 ---
 
 For most of us, the challenge is to get _more_ productive. But there are some folks out there wondering how to be _less_ productive. Take Alan (name altered to protect his privacy). He’s been obsessed with his productivity ever since he started his own app development company. _“I’m so productive these days, there’s hardly any work left for me to do. Now I’ve taken to doing other people’s work, just to keep me occupied. It’s quite worrisome, I admit."_ The condition is not yet officially marked as an addiction, though it does remind us of another one: people (usually rockstars) suffering from sex addiction. Not a complaint I’ve ever heard from anyone I actually know, but apparently it _does_ exist. For Alan and others suffering a similar fate, we’ve composed this guide on how to be as unproductive as possible.

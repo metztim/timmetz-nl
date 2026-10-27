@@ -3,6 +3,7 @@ title: "How to Follow Your Gut?"
 pubDate: 2014-10-18
 sourceName: "Saent"
 tags: ["saent","decision-making-instinct"]
+mediumUrl: "https://medium.com/@timmetz/79d00ca51c96"
 ---
 
 The Almighty Gut; worshipped by some, neglected by most. He can be hard to detect, and even when you find His voice, others will doubt. For He is not always the right one to turn to for council. Which begs the questions:

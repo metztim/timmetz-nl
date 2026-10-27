@@ -4,6 +4,7 @@ description: "Saying yes is easy: We want to please others. We don’t want to d
 pubDate: 2015-02-01
 sourceName: "Saent"
 tags: ["saent","communication-decision-making-essentialism-prioritising-saying-no"]
+mediumUrl: "https://medium.com/@timmetz/you-say-yes-i-say-no-7-tips-to-help-minimize-commitments-77d99d85e05e"
 ---
 
 **Saying yes is easy:** We want to please others. We don't want to disappoint. We want to be able to do everything. We don't want to miss any opportunities.

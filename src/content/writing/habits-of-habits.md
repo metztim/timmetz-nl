@@ -4,6 +4,7 @@ description: "Have you ever seen someone show up in the most professional snowbo
 pubDate: 2015-01-02
 sourceName: "Saent"
 tags: ["saent","change-habits-self-improvement-tricks"]
+mediumUrl: "https://medium.com/@timmetz/understanding-your-inner-autopilot-do-you-know-these-4-common-habits-of-habits-df703a4aa77c"
 ---
 
 Have you ever seen someone show up in the most professional snowboarding gear on the planet, on his first lesson? Had an intern who insists he needs a MacBook Pro to properly write his graduation report? Or observed a 6 year with a tennis racket, more expensive than your iPhone 6? What they have in common, is a belief having the very best tools will instantly improve their abilities. But as any true professional will confirm, awesome equipment only starts to count when you know how to use it. First, you need understanding of the game, the right technique, good practise habits and so on. A world-class player with shitty tools will still beat an amateur with excellent gear any day.

@@ -4,6 +4,7 @@ description: "This book is an exploration of happiness. a large part of the book
 pubDate: 2021-08-28
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/just-finished/flow-book-review-5990dd8b8ab7"
 ---
 
 _The Psychology of Optimal Experience  

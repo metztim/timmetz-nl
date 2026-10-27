@@ -4,6 +4,7 @@ description: "In Michael Bungay Stanier's The Coaching Habit, coaching becomes a
 pubDate: 2021-08-29
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/just-finished/the-coaching-habit-quick-reference-guide-2ffe057a3354"
 ---
 
 _In these_ **_quick reference guides_**_, I provide a practical overview of the essence of a book. I recommend reading the book and using these afterwards. They’re not intended as a substitute for the actual book._

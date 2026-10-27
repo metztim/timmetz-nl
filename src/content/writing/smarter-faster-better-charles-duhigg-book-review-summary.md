@@ -4,6 +4,7 @@ description: "Does not do as advertised; more about management and team collabor
 pubDate: 2021-08-28
 sourceName: "Saent"
 tags: ["saent"]
+mediumUrl: "https://medium.com/just-finished/smarter-faster-better-book-review-a9bc0f0634c4"
 ---
 
 _The Secrets of Being Productive_

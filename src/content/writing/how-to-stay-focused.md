@@ -4,6 +4,7 @@ description: "Chances are you shouldn’t be reading this right now. You set off
 pubDate: 2015-01-11
 sourceName: "Saent"
 tags: ["saent","distraction-focus-health-tools-tricks"]
+mediumUrl: "https://medium.com/@timmetz/how-to-stay-focused-and-withstand-unlimited-distraction-62611a3e6002"
 ---
 
 Chances are you shouldn't be reading this right now. You set off to do something else, yet somehow you ended up here. Welcome to the Age of Unlimited Distraction. When you're wondering how to stay focused, you might think of it as training a muscle in the gym. The more activities you do which require deep concentration (reading a book, finishing a design, writing a report, coming up with a marketing concept), the more you train your ability to focus, right? Right, but there's a but.

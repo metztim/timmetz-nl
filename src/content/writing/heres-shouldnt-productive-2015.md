@@ -4,6 +4,7 @@ description: "Do you plan to go to the gym more often in the new year? Smoke and
 pubDate: 2014-12-11
 sourceName: "Saent"
 tags: ["saent","habits-productivity"]
+mediumUrl: "https://medium.com/@timmetz/heres-why-you-shouldnt-be-more-productive-in-2015-686c197b9c6b"
 ---
 
 Do you plan to go to the gym more often in the new year? Smoke and drink less? Get more engaged at work? Or maybe quit your job and go on that travel adventure you’ve always dreamed of?

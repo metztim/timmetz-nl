@@ -4,6 +4,7 @@ description: "There are many things we can all learn from the story of Regie Sha
 pubDate: 2015-01-30
 sourceName: "Saent"
 tags: ["saent","books-distraction-focus-habits-lifestyle-trends"]
+mediumUrl: "https://medium.com/@timmetz/a-deadly-wandering-living-with-distraction-book-review-698ad6e2d722"
 ---
 
 There are many things we can all learn from the story of Regie Shaw. The one that stands out most is probably this: each one of us _could_ have easily been him, and still any one of us can easily _become_ him. If that happens, you will kill innocent people through your neglect. You'll also ruin the lives of the victims' families, along with your own, having to live with the guilt of what you've done for the rest of your life.
