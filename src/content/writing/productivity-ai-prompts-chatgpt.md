@@ -119,7 +119,7 @@ Take any text and create a suitable visual to go along with it. ChatGPT can anal
 
 The first step of this prompt transforms your text into a movie scene. It then takes this output and distills it into the description of a YouTube thumbnail. Finally, it condenses that still description into a short message suitable for an AI image generator like Midjourney.
 
-**🔐 This prompt template** [**is available on _We Eat Robots_**](https://open.substack.com/pub/weeatrobots/p/prompt-generator-for-midjourney?r=28d4px&utm_campaign=post&utm_medium=web) **for paying subscribers.**
+**This prompt template** [**is available in my 2023 prompt templates**](/writing/prompt-templates-from-2023/#prompt-generator-for-midjourney)**.**
 
 ## 7\. Plan your next trip 🌍
 

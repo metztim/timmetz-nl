@@ -16,4 +16,4 @@ I wrote this article for fellow creatives who follow my other publication, _We E
 
 This piece explores the intersections of AI, creativity, and productivity. I hope you find it insightful and helpful.
 
-**👉️ Read** [**AI Transformation: A Soothing Framework for Adapting to the Future on Substack**](https://weeatrobots.substack.com/p/ai-transformation-a-soothing-framework)**.**
+**👉️ Read** [**AI Transformation: A Soothing Framework for Adapting to the Future on Substack**](https://www.weeatrobots.com/p/ai-transformation-a-soothing-framework)**.**

@@ -17,7 +17,7 @@ To do this, **you don't need technical skills**, only the ability to write Engli
 
 In this two-part series, I will provide examples, templates, and tips on how to talk to an AI to make you more productive and creative.
 
-## Template #1: [The Expert Generator](https://weeatrobots.substack.com/p/prompt-the-expert-generator)
+## Template #1: [The Expert Generator](/writing/prompt-templates-from-2023/#prompt-the-expert-generator)
 
 The first template summons an expert on a particular subject, whom you can then ask one or more questions.
 
@@ -121,7 +121,7 @@ Click the image below to watch a video where I explain these steps using the Exp
 
 I hope you're now inspired to try out these templates and create your own AI machines.
 
-**Please share with me what you create, and send me comments or ideas for improving** [**these and other templates**](https://weeatrobots.substack.com/)**.** Just [reach out on Twitter](https://twitter.com/timmetz).
+**Please share with me what you create, and send me comments or ideas for improving** [**these and other templates**](https://www.weeatrobots.com/)**.** Just [reach out on Twitter](https://twitter.com/timmetz).
 
 In a future weekly email, I’ll share part 2 with more advanced ways of talking to an AI and getting the results you want.
 

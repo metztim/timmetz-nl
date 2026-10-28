@@ -4,7 +4,7 @@ description: "Newsletter about AI, productivity, and thinking for yourself"
 status: active
 role: "Author"
 startDate: 2024-07-01
-url: "https://weeatrobots.substack.com"
+url: "https://www.weeatrobots.com"
 tags: ["ai", "writing", "productivity"]
 featured: true
 sortOrder: 2

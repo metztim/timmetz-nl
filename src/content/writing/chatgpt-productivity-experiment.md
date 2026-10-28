@@ -82,7 +82,7 @@ None of these tips are earth-shattering, but they're based on only one week of i
 
 ChatGPT, especially when powered by GPT-4, is an incredibly useful writing and content marketing assistant. But it’s also a _frenemy_, as it’s taking over tasks traditionally performed by human writers like myself.
 
-I’ve launched [a new publication called _We Eat Robots_](https://weeatrobots.substack.com/) to help content marketers and writers work with AI. I’ll share my journey—and soon those of others—on learning to work with AI as a writer. I’ll publish interviews, practical tips, and the prompt templates I’m building, testing, and using.
+I’ve launched [a new publication called _We Eat Robots_](https://www.weeatrobots.com/) to help content marketers and writers work with AI. I’ll share my journey—and soon those of others—on learning to work with AI as a writer. I’ll publish interviews, practical tips, and the prompt templates I’m building, testing, and using.
 
 \--
 
