@@ -945,4 +945,55 @@ Built a standalone HTML homepage prototype using the `frontend-design` skill, tr
 >
 > Read the session log section above, familiarize yourself with the context, and let me know when ready to continue.
 
+---
+
+## Session Log: 2026-10-28 - medium-archive-closeout
+
+**Project**: timmetz-nl (`/Users/timmetz/Developer/Projects/Personal/timmetz-nl`)
+**Tool**: Codex
+**Session ID**: 01a166b3-74a3-7381-a980-ef608fbcf979
+**Account**: personal (subject classification)
+**Started / saved**: 2026-10-23T10:00:00+0700 / 2026-10-28T18:57:56+0700
+
+### Summary
+Obtained the complete Medium account export after support repaired delivery and preserved the untouched ZIP with integrity and inventory checks in private Dropbox storage. Published the missing full articles on timmetz.nl in commit `86d219d`, preserved existing website versions, downloaded the article images, and verified the deployed pages against the archive. Archived the articles in Notion MyContent and individually verified the corresponding canonical URLs and visible website links on the published Medium originals. The Medium work and Notion task closeout are complete. Tim approved pushing the session-record files and archiving this chat.
+
+### Decisions
+- Host full articles on timmetz.nl and retain the Medium copies, as Tim approved.
+- Preserve existing website article bodies and URLs where the article already had a website version.
+- Add the approved `Article - Medium` type to MyContent and preserve the existing record's earlier version alongside its Medium version.
+- Point each Medium canonical URL and visible article note to the matching timmetz.nl page, as Tim approved.
+- Retain the Medium account. Account closure is outside the completed migration.
+
+### Files changed
+- `src/content/writing/`, `public/images/medium/`: imported articles, source links, and local image assets in `86d219d`.
+- `src/content.config.ts`, `src/pages/writing/[...slug].astro`, `src/layouts/Post.astro`: optional Medium source link in the hosted article layout.
+- `scripts/import-medium.py`, `scripts/audit-medium.py`, `scripts/medium-existing-map.json`: reproducible import, source mapping, and built-content verification.
+- `assets.md`: private archive and original-image locations.
+- `CLAUDE.md`: importer, audit, source-link field, and private-receipt ownership.
+- `docs/planning/PLAN.md`: completed Medium phase; this planning directory remains gitignored.
+- `docs/SESSION_LOG.md`, `docs/logs/index.jsonl`: final session handoff and retrieval index.
+
+### Referenced
+- `https://www.timmetz.nl/writing/`: deployed archive, checked against the source export.
+- `https://help.medium.com/hc/en-us/articles/115004745787-Export-your-account-data`: official export procedure.
+- `https://help.medium.com/hc/en-us/articles/360033930293-Set-a-canonical-link`: official Medium canonical setting.
+- Private archive root: `/Users/timmetz/Library/CloudStorage/Dropbox/3 Personal/3 Resources/Repo assets/timmetz-nl/medium-export/2026-10-23/`.
+- `archive-completion.json`, `archive-verification.json`, `archive-post-inventory.json`, `published-inventory.json`: original ZIP identity, account inventory, and completeness evidence under the private archive root.
+- `website-import-2026-10-27/completion.json`, `live-verification.json`, `site-import.json`, `image-downloads.json`: deployment, article mapping, and image verification receipts under that archive root.
+- `notion-import-2026-10-27/completion.json`, `created-pages.json`: content archive verification and Notion page mappings.
+- `medium-canonical-updates-2026-10-28/completion.json`, `plan.json`, `receipts.json`, `verified-backlink-example.png`: completed Medium changes and per-article readbacks.
+- The export heartbeat `get-medium-article-archive` was deleted after archive delivery; its local automation file is absent.
+
+### Tracked in Notion
+- **"Export Medium posts"** (Personal Tasks, `2d9edc77-7df2-8039-ad8b-cb99628a91d6`, personal): marked Done under Tim's closeout approval; completed checklist, result context, and archive links were reread and verified. The original table of contents and empty paragraph remain intact.
+- **"Timmetz.nl"** (Personal Projects, `2d9edc77-7df2-80af-8492-e39619beedb7`, personal): parent project; unrelated website tasks and project status remain outside this closeout.
+- **"MyContent"** (content database, `131edc77-7df2-80be-a79e-edc6e0955fc2`, personal): article archive imported and verified; page mappings live with the private receipts.
+
+### Plan of record
+`docs/planning/PLAN.md`, Phase C3, is complete. The planning directory is private and gitignored; the completion receipts remain in Dropbox.
+
+### Continuation prompt
+Tool: Codex. Read `docs/SESSION_LOG.md`, section "## Session Log: 2026-10-28 - medium-archive-closeout" (Session ID 01a166b3-74a3-7381-a980-ef608fbcf979). The Medium archive, website publication, MyContent import, and Medium canonical/backlink updates are complete. No Medium migration work remains. The final Notion readback and save receipt live in `session-closeout-2026-10-28/` under the archive root. Do not restart imports, request another export, close the Medium account, or change other website tasks.
+
 <!-- END_OF_SESSION_LOG -->

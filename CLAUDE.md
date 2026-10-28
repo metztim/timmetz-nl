@@ -62,6 +62,12 @@ public/
 | Add media entry | Create `src/content/media/{slug}.md`                            |
 | Deploy          | Commit + push to main → auto-build on Cloudflare Pages          |
 
+## Medium archive
+
+`assets.md` locates the private account export, original images, import manifests, and verification receipts. `scripts/import-medium.py` imports from that archive; `scripts/medium-existing-map.json` maps Medium IDs to existing website articles. The importer checks recorded hashes before overwriting generated content. `scripts/audit-medium.py --archive <archive-directory>` compares the built pages in `dist/` with the original export; its Python environment needs `lxml`.
+
+Hosted articles use their website URL as canonical. The optional `mediumUrl` field adds the reader-facing link to the Medium copy. Medium-side canonical links and article notes are separate published settings; their verification receipts live with the private archive.
+
 ## Content migration debris
 
 Most posts in `src/content/writing/` were exported from Webflow, and the export left artifacts that render as visible junk. When a post looks wrong, check these before anything else:
