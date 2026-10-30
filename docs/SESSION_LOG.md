@@ -996,4 +996,43 @@ Obtained the complete Medium account export after support repaired delivery and 
 ### Continuation prompt
 Tool: Codex. Read `docs/SESSION_LOG.md`, section "## Session Log: 2026-10-28 - medium-archive-closeout" (Session ID 01a166b3-74a3-7381-a980-ef608fbcf979). The Medium archive, website publication, MyContent import, and Medium canonical/backlink updates are complete. No Medium migration work remains. The final Notion readback and save receipt live in `session-closeout-2026-10-28/` under the archive root. Do not restart imports, request another export, close the Medium account, or change other website tasks.
 
+---
+
+## Session Log: 2026-10-30 - site-review-analytics-and-crawlability
+
+**Project**: timmetz-nl (`/Users/timmetz/Developer/Projects/Personal/timmetz-nl`)
+**Tool**: Codex
+**Session ID**: 01a0dcbc-1583-7b72-9c06-0d3192a3c56d
+**Account**: personal (subject classification)
+**Started / saved**: 2026-09-26T15:01:50+0700 / 2026-10-30T14:01:27+0700
+
+### Summary
+Reviewed the live site and personal Notion project, then deployed improvements to Writing discovery, navigation, accessibility, selected non-article copy, canonical URLs, redirects, and the 404 page. Enabled Cloudflare Web Analytics and verified its live beacon and initial data; article source files were unchanged. A later crawlability check found that the live robots file allows all crawlers, the sitemap responds successfully, and test requests with major crawler user agents receive HTTP 200. No crawler settings were changed. This cleanup saved the chat without resuming site work or writing to Notion.
+
+### Decisions
+- Keep the existing robots file: it allows all crawlers and points to the live sitemap; the inspected pages have no `noindex` directive.
+- Treat Cloudflare AI Crawl Control as outside the current site configuration: `timmetz.nl` uses TransIP nameservers, and the Cloudflare account home displayed only `saent.com` as a domain. The Cloudflare Domains overview rendered blank, so its controls were not independently inspected.
+- Leave mailing-list migration, external profile publishing, and account changes outside this site's small-fix pass.
+
+### Files changed
+- `src/pages/writing/index.astro`, `src/components/`, `src/layouts/Base.astro`, `src/styles/global.css`: Writing filters, mobile navigation, theme behavior, and accessibility.
+- `src/pages/`, `src/content/projects/`, `src/content/work/`: selected non-article copy, draft exclusion, canonical metadata, and a 404 page.
+- `astro.config.mjs`, `public/robots.txt`, `public/_redirects`, `scripts/audit-site.py`: canonical origin, sitemap pointer, legacy redirect, and site audit.
+- `docs/copy-review-2026-09-26.md`, `docs/site-review-2026-09-26.md`: copy proposals and prioritized site review.
+- `docs/SESSION_LOG.md`, `docs/logs/index.jsonl`: this save and retrieval index.
+
+### Referenced
+- `https://www.timmetz.nl/robots.txt`, `https://www.timmetz.nl/sitemap-index.xml`, `https://www.timmetz.nl/writing/`: live crawler and indexing checks.
+- `https://developers.cloudflare.com/ai-crawl-control/get-started/`: Cloudflare zone and proxy prerequisites.
+- `https://developers.google.com/search/docs/appearance/ai-features`, `https://help.openai.com/en/articles/9237897-chatgpt-search`: official AI search crawlability guidance.
+- `docs/site-review-2026-09-26.md`: deployed work, verification, and deferred backlog.
+
+### Tracked in Notion
+- **"Timmetz.nl"** (Personal Projects, `2d9edc77-7df2-80af-8492-e39619beedb7`, personal): project status and prioritized site backlog were updated during the site pass; no Notion change during this cleanup.
+- **"Website migration sweep"** (Personal Tasks, `3c6edc77-7df2-81a7-a20b-f33612bf048d`, personal): audit progress recorded; archive cleanup remained in progress.
+- **"Strengthen personal online presence so LLMs cite me"** (Personal Tasks, `379edc77-7df2-819a-9dff-cc9056f579aa`, personal): site improvements recorded; external promotion remains separate.
+
+### Continuation prompt
+Tool: Codex. Read `docs/SESSION_LOG.md`, section "## Session Log: 2026-10-30 - site-review-analytics-and-crawlability" (Session ID 01a0dcbc-1583-7b72-9c06-0d3192a3c56d). This chat's site review, deployment, analytics setup, and crawler check are complete. New website work should start from the current repository and the Timmetz.nl Notion project; do not repeat the completed audit or infer that deferred backlog tasks are closed.
+
 <!-- END_OF_SESSION_LOG -->
