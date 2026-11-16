@@ -1,0 +1,121 @@
+/* We Eat Robots brand tokens 1.0.0. Generated from tokens.json by source/build_tokens.py; edit the JSON, not this file. */
+:root {
+  /* brand colors */
+  --wer-yellow: #E8F21F;
+  --wer-black: #000000;
+  --wer-white: #FFFFFF;
+  /* neutral ramp (authored for this kit) */
+  --wer-neutral-950: #1E1E1E;
+  --wer-neutral-800: #3A3A3C;
+  --wer-neutral-600: #5F5F63;
+  --wer-neutral-500: #737377;
+  --wer-neutral-400: #8E8E93;
+  --wer-neutral-300: #B9B9BE;
+  --wer-neutral-200: #DCDCDF;
+  --wer-neutral-100: #EFEFEF;
+  --wer-neutral-50: #F7F7F7;
+  /* color roles on light surfaces */
+  --wer-surface: var(--wer-white);
+  --wer-surface-tint: var(--wer-neutral-50);
+  --wer-surface-raised: var(--wer-neutral-100);
+  --wer-text: var(--wer-black);
+  --wer-text-secondary: var(--wer-neutral-600);
+  --wer-text-caption: var(--wer-neutral-500);
+  --wer-line: var(--wer-neutral-200);
+  --wer-highlight: var(--wer-yellow);
+  --wer-on-highlight: var(--wer-black);
+  --wer-data-context: var(--wer-neutral-400);
+  --wer-data-marked: var(--wer-yellow);
+  --wer-link: var(--wer-black);
+  /* font families with their fallbacks */
+  --wer-font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --wer-font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --wer-font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /* web type roles: weight size/line family, and tracking in em */
+  --wer-type-article-headline: 600 40px/1.1 var(--wer-font-serif);
+  --wer-type-article-headline-tracking: 0em;
+  --wer-type-article-deck: 400 20px/1.35 var(--wer-font-sans);
+  --wer-type-article-deck-tracking: 0em;
+  --wer-type-body: 400 18px/1.55 var(--wer-font-serif);
+  --wer-type-body-tracking: 0em;
+  --wer-type-body-strong: 600 18px/1.55 var(--wer-font-serif);
+  --wer-type-body-strong-tracking: 0em;
+  --wer-type-quote: italic 400 24px/1.35 var(--wer-font-serif);
+  --wer-type-quote-tracking: 0em;
+  --wer-type-heading-2: 700 26px/1.2 var(--wer-font-sans);
+  --wer-type-heading-2-tracking: 0em;
+  --wer-type-heading-3: 600 19px/1.25 var(--wer-font-sans);
+  --wer-type-heading-3-tracking: 0em;
+  --wer-type-ui: 400 15px/1.45 var(--wer-font-sans);
+  --wer-type-ui-tracking: 0em;
+  --wer-type-button: 600 15px/1 var(--wer-font-sans);
+  --wer-type-button-tracking: 0em;
+  --wer-type-label: 400 12px/1.2 var(--wer-font-mono);
+  --wer-type-label-tracking: 0.08em;
+  --wer-type-caption: 400 12px/1.4 var(--wer-font-mono);
+  --wer-type-caption-tracking: 0em;
+  --wer-type-figure: 600 32px/1 var(--wer-font-mono);
+  --wer-type-figure-tracking: 0em;
+  /* document type roles, in points */
+  --wer-doc-title: 700 26pt/1.15 var(--wer-font-sans);
+  --wer-doc-subtitle: 400 13pt/1.4 var(--wer-font-serif);
+  --wer-doc-heading-1: 700 17pt/1.2 var(--wer-font-sans);
+  --wer-doc-heading-2: 600 13pt/1.25 var(--wer-font-sans);
+  --wer-doc-body: 400 10.5pt/1.5 var(--wer-font-sans);
+  --wer-doc-reading: 400 11pt/1.55 var(--wer-font-serif);
+  --wer-doc-label: 400 8pt/1.2 var(--wer-font-mono);
+  --wer-doc-table: 400 9.5pt/1.35 var(--wer-font-sans);
+  --wer-doc-caption: 400 8pt/1.4 var(--wer-font-mono);
+  --wer-doc-footer: 400 7.5pt/1.3 var(--wer-font-mono);
+  /* spacing, radius, and controls */
+  --wer-space-1: 4px;
+  --wer-space-2: 8px;
+  --wer-space-3: 12px;
+  --wer-space-4: 16px;
+  --wer-space-6: 24px;
+  --wer-space-8: 32px;
+  --wer-space-12: 48px;
+  --wer-space-16: 64px;
+  --wer-radius-control: 8px;
+  --wer-radius-card: 12px;
+  --wer-radius-pill: 999px;
+  --wer-control-height: 40px;
+  --wer-rule: 1px;
+  /* the app's functional colors: the app's own, with their meanings, and not brand colors */
+  --wer-app-interval: #14AAE2;
+  --wer-app-rest: #7AC442;
+  --wer-app-meeting: #EF7F21;
+  --wer-app-warning: #E8212D;
+  --wer-app-unassigned: #F272AA;
+  --wer-app-label-on-fill: #04161F;
+}
+/* phone sizes */
+@media (max-width: 600px) {
+  :root {
+    --wer-type-article-headline: 600 30px/1.1 var(--wer-font-serif);
+    --wer-type-article-deck: 400 18px/1.35 var(--wer-font-sans);
+    --wer-type-body: 400 17px/1.55 var(--wer-font-serif);
+    --wer-type-body-strong: 600 17px/1.55 var(--wer-font-serif);
+    --wer-type-quote: italic 400 21px/1.35 var(--wer-font-serif);
+    --wer-type-heading-2: 700 22px/1.2 var(--wer-font-sans);
+    --wer-type-heading-3: 600 18px/1.25 var(--wer-font-sans);
+    --wer-type-label: 400 11px/1.2 var(--wer-font-mono);
+    --wer-type-caption: 400 11px/1.4 var(--wer-font-mono);
+    --wer-type-figure: 600 28px/1 var(--wer-font-mono);
+  }
+}
+/* color roles on the dark surface */
+[data-wer-theme="dark"] {
+  --wer-surface: var(--wer-neutral-950);
+  --wer-surface-tint: var(--wer-neutral-950);
+  --wer-surface-raised: var(--wer-neutral-800);
+  --wer-text: var(--wer-white);
+  --wer-text-secondary: var(--wer-neutral-300);
+  --wer-text-caption: var(--wer-neutral-300);
+  --wer-line: var(--wer-neutral-800);
+  --wer-highlight: var(--wer-yellow);
+  --wer-on-highlight: var(--wer-black);
+  --wer-data-context: var(--wer-neutral-500);
+  --wer-data-marked: var(--wer-yellow);
+  --wer-link: var(--wer-white);
+}

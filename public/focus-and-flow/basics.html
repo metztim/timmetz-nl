@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Focus Basics</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wer.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="wer">
+<div class="page">
+
+<header class="masthead">
+  <a class="masthead-logo" href="index.html"><img src="img/name-highlight.svg" alt="We Eat Robots"></a>
+  <ul class="nav">
+    <li><a href="index.html">Start</a></li>
+    <li><a href="drafting.html">Drafting</a></li>
+    <li><a href="basics.html" aria-current="page">Basics</a></li>
+    <li><a href="rhythm.html">Rhythm</a></li>
+    <li><a href="library.html">Library</a></li>
+  </ul>
+</header>
+
+<main>
+  <div class="page-head column">
+    <p class="wer-label">02 Basics</p>
+    <h1 class="wer-headline">Focus Basics</h1>
+    <p class="wer-deck">Ten habits that do more for a draft than any tool.</p>
+  </div>
+
+  <div class="prose column">
+    <p>Most of these sound basic, and plenty of people still haven't set them up. Tick the ones you already do, then pick one to add this week.</p>
+  </div>
+
+  <div class="column">
+    <ul class="checklist" id="checklist">
+      <li><label class="check"><input type="checkbox" data-key="slack"><span class="check-box"></span><span><span class="check-title">Close Slack and email before you write</span><span class="check-line">A glance at a notification is a task switch. Open them again when the session ends.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="phone"><span class="check-box"></span><span><span class="check-title">Put your phone in another room</span><span class="check-line">Out of reach works better than face down on the desk.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="notifications"><span class="check-box"></span><span><span class="check-title">Turn off desktop and browser notifications</span><span class="check-line">Your brain jumps to anything new, so remove the new things.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="first"><span class="check-box"></span><span><span class="check-title">Draft before you connect</span><span class="check-line">Do your deep work before the inbox and Slack get their first look at your day.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="single"><span class="check-box"></span><span><span class="check-title">Work on one task per timed block</span><span class="check-line">Ten minutes on one thing is the minimum. Build up to 25, 50, and at most 90.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="energy"><span class="check-box"></span><span><span class="check-title">Give drafting your best hours</span><span class="check-line">Learn when your energy peaks, and keep email out of that slot.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="breaks"><span class="check-box"></span><span><span class="check-title">Take the break</span><span class="check-line">One minute of rest for every five minutes of work, away from the screen.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="time"><span class="check-box"></span><span><span class="check-title">Time your writing</span><span class="check-line">Measure how long an outline or a draft takes you, and plan with those numbers.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="place"><span class="check-box"></span><span><span class="check-title">Match the place to the task</span><span class="check-line">A spot where you only draft gets you into the work faster.</span></span></label></li>
+      <li><label class="check"><input type="checkbox" data-key="calendar"><span class="check-box"></span><span><span class="check-title">Block the slot in your calendar</span><span class="check-line">Pick a fixed time and tie it to a habit you already have, such as your first coffee.</span></span></label></li>
+    </ul>
+    <p class="check-count" id="check-count" aria-live="polite"></p>
+  </div>
+
+  <div class="prose column">
+    <h2 id="test">Multitasking test</h2>
+    <p>Many people believe they multitask well. <a href="https://www.timmetz.nl/writing/multitasking-test/">This test</a> takes two minutes, paper, and a pen, and it shows what switching between tasks costs you.</p>
+
+    <h2 id="book">Find Your Focus</h2>
+    <p>The checklist is the short version of Find Your Focus, a book I wrote for Saent, the productivity company I ran before Animalz. It is a ten-day path to better concentration, with one short chapter and one action per day.</p>
+  </div>
+
+  <div class="book column">
+    <img src="img/find-your-focus-cover.jpg" alt="Cover of Find Your Focus by Tim Metz" width="450" height="720">
+    <div class="book-text">
+      <p>The ten chapters: prepare, single-task, destroy distractions, time, energize, move, recharge, tame your mind, eliminate, and train.</p>
+      <a class="wer-button" href="downloads/find-your-focus.epub" download><span>Download the ebook</span></a>
+      <p class="wer-caption">EPUB, 0.3 MB. Opens in Apple Books and other reader apps.</p>
+    </div>
+  </div>
+
+  <div class="next column">
+    <p class="wer-label">Next</p>
+    <a href="rhythm.html">Work rhythm</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>Written by Tim Metz for the Animalz team</p>
+  <p>We Eat Robots</p>
+</footer>
+
+</div>
+<script>
+(function () {
+  var KEY = "focus-and-flow-checklist";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("#checklist input[type=checkbox]"));
+  var count = document.getElementById("check-count");
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { saved = {}; }
+  function render() {
+    var done = boxes.filter(function (b) { return b.checked; }).length;
+    count.textContent = done + " of " + boxes.length + " ticked. Your ticks are saved in this browser only.";
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!saved[b.dataset.key];
+    b.addEventListener("change", function () {
+      saved[b.dataset.key] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      render();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>

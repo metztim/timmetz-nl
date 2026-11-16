@@ -1,0 +1,82 @@
+/* We Eat Robots brand kit v1: shared components for web pages, documents, and graphics.
+   Load fonts/fonts.css and tokens/tokens.css before this file. Every value comes from a token.
+   The components are conventions written for this kit. The yellow is always a fill behind black. */
+
+.wer {
+  background: var(--wer-surface);
+  color: var(--wer-text);
+  font: var(--wer-type-ui);
+  font-synthesis: none;            /* a missing weight or italic shows as missing; nothing is faked */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.wer *, .wer *::before, .wer *::after { box-sizing: border-box; }
+.wer a { color: var(--wer-link); text-decoration: underline; text-underline-offset: 0.16em; text-decoration-thickness: 0.07em; }
+
+/* type roles */
+.wer-headline { margin: 0; font: var(--wer-type-article-headline); letter-spacing: var(--wer-type-article-headline-tracking); }
+.wer-deck { margin: 0; font: var(--wer-type-article-deck); }
+.wer-body { margin: 0; font: var(--wer-type-body); }
+.wer-body + .wer-body { margin-top: 0.8em; }
+.wer-body strong { font-weight: 600; }
+.wer-quote { margin: 0; font: var(--wer-type-quote); }
+.wer-h2 { margin: 0; font: var(--wer-type-heading-2); }
+.wer-h3 { margin: 0; font: var(--wer-type-heading-3); }
+.wer-ui { margin: 0; font: var(--wer-type-ui); }
+.wer-label { margin: 0; font: var(--wer-type-label); letter-spacing: var(--wer-type-label-tracking); text-transform: uppercase; }
+.wer-caption { margin: 0; font: var(--wer-type-caption); color: var(--wer-text-caption); }
+.wer-figure { margin: 0; font: var(--wer-type-figure); font-variant-numeric: tabular-nums; }
+
+/* the highlight: yellow behind black words, in running text */
+.wer-mark {
+  background: var(--wer-highlight);
+  color: var(--wer-on-highlight);
+  padding: 0 0.18em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+/* the cut: a yellow block with four uneven corners behind a short line, after the highlight in the logo */
+.wer-cut {
+  display: inline-block;
+  background: var(--wer-highlight);
+  color: var(--wer-on-highlight);
+  padding: 0.1em 0.42em 0.14em;
+  clip-path: polygon(0.8% 7%, 99% 0, 100% 91%, 1.6% 100%);
+}
+
+/* buttons: the label sits on the button's center by its capitals */
+.wer-button {
+  display: inline-flex;
+  align-items: center;
+  height: var(--wer-control-height);
+  padding: 0 18px;
+  border: 0;
+  border-radius: var(--wer-radius-control);
+  background: var(--wer-highlight);
+  color: var(--wer-on-highlight);
+  text-decoration: none;
+}
+.wer a.wer-button { text-decoration: none; color: var(--wer-on-highlight); }
+.wer-button > span { display: block; font: var(--wer-type-button); text-box: trim-both cap alphabetic; }
+.wer-button--plain { background: transparent; color: var(--wer-text); box-shadow: inset 0 0 0 1.5px var(--wer-text); }
+.wer a.wer-button--plain { color: var(--wer-text); }
+
+/* tables: mono heads, tabular figures, one black rule under the head */
+.wer-table { border-collapse: collapse; font: var(--wer-type-ui); font-variant-numeric: tabular-nums; }
+.wer-table th {
+  padding: 6px 18px 6px 0;
+  border-bottom: var(--wer-rule) solid var(--wer-text);
+  font: var(--wer-type-label);
+  letter-spacing: var(--wer-type-label-tracking);
+  text-transform: uppercase;
+  text-align: left;
+}
+.wer-table td { padding: 7px 18px 7px 0; border-bottom: var(--wer-rule) solid var(--wer-line); vertical-align: baseline; }
+.wer-table th:last-child, .wer-table td:last-child { padding-right: 0; }
+.wer-table .num { text-align: right; }
+
+/* the callout: one point on the yellow ground */
+.wer-callout { margin: 0; padding: 14px 18px; background: var(--wer-highlight); color: var(--wer-on-highlight); font: var(--wer-type-ui); font-weight: 600; }
+
+.wer-rule { height: 0; margin: 0; border: 0; border-top: var(--wer-rule) solid var(--wer-line); }
+.wer-rule--strong { border-top-color: var(--wer-text); }
